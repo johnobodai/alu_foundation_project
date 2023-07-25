@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiGirls Technnovation - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>DIgiGirls Technovation</h1>
+        <p>Learn coding from scratch</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Sign Up for Free</h2>
+            <p>Create an account with DigiGirls Technnovation to improve your learning experiences.</p>
+            <form action="submit_form.php" method="POST">
+                <label for="title">Title:</label>
+                <select id="title" name="title">
+                    <option value="Miss">Miss</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                </select><br>
+
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required><br>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="13" required><br>
+
+                <label for="gender">Gender:</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label><br>
+
+                <label for="country">Country:</label>
+                <select id="country" name="country" required>
+                    <option value="Nigeria">Nigeria</option>
+                    <option value="Ghana">Ghana</option>
+                    <option value="Kenya">Kenya</option>
+                    <!-- Add other African countries here -->
+                </select><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required><br>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a
+                        href="privacy.html" target="_blank">Privacy Policy</a></label><br>
+
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+</body>
+
+</html>
+

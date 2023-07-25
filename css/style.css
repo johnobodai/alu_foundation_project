@@ -1,0 +1,346 @@
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+/* Main styles */
+main {
+  padding: 2rem;
+  flex: 1; /* Allow main to grow to fill available space */
+}
+
+footer {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+/* Home page specific styles */
+h1 {
+  margin: 0;
+}
+
+/* Sign-up page specific styles */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+form button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Login page specific styles */
+h2 {
+  text-align: center;
+}
+
+main section {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+main section p {
+  text-align: center;
+}
+
+main section a {
+  display: block;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Center the header text */
+header h1,
+header p {
+  text-align: center;
+}
+
+/* Center the navigation links */
+nav ul {
+  text-align: center;
+}
+
+/* Center the footer text */
+footer p {
+  text-align: center;
+}
+
+/* About Us page specific styles */
+#about {
+  text-align: center;
+}
+
+.team-member {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.team-member img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-member h4 {
+  margin-top: 1rem;
+}
+
+.team-member p {
+  margin-bottom: 1rem;
+}
+
+/* Contact page specific styles */
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Add some responsive styles for better user experience on smaller screens */
+@media screen and (max-width: 768px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-form {
+    padding: 1rem;
+  }
+}
+
+/* Additional styles for the contact page */
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-section {
+  flex: 1 1 300px;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.contact-form label,
+.contact-form textarea,
+.contact-form button,
+.feedback-form label,
+.feedback-form textarea,
+.feedback-form button {
+  display: block;
+  width: 100%;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.feedback-form textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea,
+.feedback-form textarea {
+  resize: vertical;
+}
+
+.contact-form button,
+.feedback-form button {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover,
+.feedback-form button:hover {
+  background-color: #555;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+
+  .contact-section {
+    flex: 1 1 auto;
+  }
+}
+
+/* Course page specific styles */
+#course-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+  margin: 2rem auto;
+}
+
+.category {
+  border: 1px solid #ddd;
+  padding: 1rem;
+}
+
+.category h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.course-card {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.course-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.course-card h4 {
+  margin-top: 1rem;
+}
+
+.course-card p {
+  margin-top: 0.5rem;
+}
+
+.course-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.course-card ul li {
+  margin-bottom: 0.3rem;
+}
+
+.course-card button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.course-card button:hover {
+  background-color: #444;
+}
+
