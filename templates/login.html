@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiGirls Technnovation - Login</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/login.js"></script>
+
+
 </head>
 
 <body>
@@ -26,7 +30,7 @@
     <main>
         <section>
             <h2>Login</h2>
-            <form action="login.php" method="POST">
+            <form id="loginForm">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required><br>
 
@@ -35,7 +39,7 @@
 
                 <button type="submit">Log In</button>
             </form>
-            <p>Don't have an account yet? <a href="signup.html">Sign Up for Free</a></p>
+            <p>Don't have an account yet? <a href="register.html">Sign Up for Free</a></p>
             <p><a href="forgot_password.html">Forgot Password?</a></p>
         </section>
     </main>
