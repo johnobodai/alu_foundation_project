@@ -14,6 +14,7 @@ app.secret_key = 'your_secret_key'
 
 
 def create_tables():
+    # Connect to the database and create the 'users' table if it doesn't exist
     conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
     cursor = conn.cursor()
     cursor.execute('''
@@ -35,12 +36,14 @@ def create_tables():
 
 @app.route('/')
 def index():
-    return render_template('login.html')
+    # Render the 'index.html' template as the landing page
+    return render_template('index.html')
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
+        # Process the registration form data when it's submitted
         title = request.form['title']
         first_name = request.form['first_name']
         last_name = request.form['last_name']
@@ -51,6 +54,7 @@ def register():
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
+        # Insert the new user data into the 'users' table in the database
         conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
         cursor = conn.cursor()
         cursor.execute('''
@@ -60,17 +64,21 @@ def register():
         conn.commit()
         conn.close()
 
+        # Redirect to the login page after successful registration
         return redirect(url_for('login'))
 
+    # Render the 'register.html' template for GET requests (displaying the registration form)
     return render_template('register.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        # Process the login form data when it's submitted
         email = request.form['email']
         password = request.form['password']
 
+        # Check if the user exists in the database and the provided password is correct
         conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
         cursor = conn.cursor()
         cursor.execute('SELECT * FROM users WHERE email = %s AND password = %s', (email, password))
@@ -81,8 +89,10 @@ def login():
             # Set up a session here if you want to manage user authentication
             return redirect(url_for('dashboard'))
         else:
+            # Render the 'login.html' template with an error message for invalid login attempts
             return render_template('login.html', error='Invalid email or password')
 
+    # Render the 'login.html' template for GET requests (displaying the login form)
     return render_template('login.html')
 
 
@@ -93,7 +103,38 @@ def dashboard():
     return render_template('dashboard.html')
 
 
+@app.route('/about')
+def about():
+    # Render the 'about.html' template for the About Us page
+    return render_template('about.html')
+
+
+@app.route('/contact')
+def contact():
+    # Render the 'contact.html' template for the Contact Us page
+    return render_template('contact.html')
+
+
+@app.route('/courses')
+def courses():
+    # Render the 'courses.html' template for the Courses page
+    return render_template('courses.html')
+
+
+@app.route('/course-details')
+def course_details():
+    # Render the 'course-details.html' template for the Course Details page
+    return render_template('course-details.html')
+
+
+@app.route('/forgot-password')
+def forgot_password():
+    # Render the 'forgot_password.html' template for the Forgot Password page
+    return render_template('forgot_password.html')
+
+
 if __name__ == '__main__':
+    # Create the necessary database tables and run the Flask app in debug mode
     create_tables()
     app.run(debug=True)
 
