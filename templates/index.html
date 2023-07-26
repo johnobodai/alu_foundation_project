@@ -14,17 +14,16 @@
         <p>Learn coding from scratch</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="../templates/index.html">Home</a></li>
-            <li><a href="../templates/courses.html">Courses</a></li>
-            <li><a href="../templates/about.html">About Us</a></li>
-            <li><a href="../templates/contact.html">Contact Us</a></li>
-            <li><a href="../templates/login.html">Login</a></li>
-        </ul>
-    </nav>
-
-    <main>
+<nav>
+    <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('courses') }}">Courses</a></li>
+        <li><a href="{{ url_for('about') }}">About Us</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+    </ul>
+</nav>  
+	<main>
         <section>
             <h2>Begin your journey to become an expert programmer</h2>
             <p>Sign up for free</p>
