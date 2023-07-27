@@ -1,148 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>DigiGirls Technnovation - Courses</title>
-	 <link rel="stylesheet" href="../static/css/course-style.css">
-</head>
+{% block content %}
+    <section id="course-categories">
+        <div class="category">
+            <h3>Web Development</h3>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Introduction to HTML and CSS</h4>
+                <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
+                <ul>
+                    <li>Course Duration: 4 weeks</li>
+                    <li>Prerequisites: None</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-<body>
-	<header>
-		<h1>DIgiGirls Technovation</h1>
-		<p>Learn coding from scratch</p>
-		<nav>
-			<ul>
-				<li><a href="{{ url_for('index') }}">Home</a></li>
-				<li><a href="{{ url_for('courses') }}">Courses</a></li>
-				<li><a href="{{ url_for('about') }}">About Us</a></li>
-				<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-			</ul>
-		</nav>
-	</header>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>JavaScript Fundamentals</h4>
+                <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
+                <ul>
+                    <li>Course Duration: 6 weeks</li>
+                    <li>Prerequisites: Basic knowledge of HTML/CSS</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-	<main>
-	<section id="course-categories">
-		<div class="category">
-			<h3>Web Development</h3>
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Introduction to HTML and CSS</h4>
-				<p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
-				<ul>
-					<li>Course Duration: 4 weeks</li>
-					<li>Prerequisites: None</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Front-End Web Development</h4>
+                <p>Learn the essentials of front-end web development and create responsive websites.</p>
+                <ul>
+                    <li>Course Duration: 10 weeks</li>
+                    <li>Prerequisites: HTML, CSS, JavaScript</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
+        </div>
 
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>JavaScript Fundamentals</h4>
-				<p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
-				<ul>
-					<li>Course Duration: 6 weeks</li>
-					<li>Prerequisites: Basic knowledge of HTML/CSS</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
+        <div class="category">
+            <h3>Data Science</h3>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Data Science with R</h4>
+                <p>Explore data science concepts using R programming language and statistical analysis.</p>
+                <ul>
+                    <li>Course Duration: 12 weeks</li>
+                    <li>Prerequisites: Basic programming knowledge</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Front-End Web Development</h4>
-				<p>Learn the essentials of front-end web development and create responsive websites.</p>
-				<ul>
-					<li>Course Duration: 10 weeks</li>
-					<li>Prerequisites: HTML, CSS, JavaScript</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
-		</div>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Machine Learning Essentials</h4>
+                <p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
+                <ul>
+                    <li>Course Duration: 12 weeks</li>
+                    <li>Prerequisites: Python, Data Analysis</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-		<div class="category">
-			<h3>Data Science</h3>
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Data Science with R</h4>
-				<p>Explore data science concepts using R programming language and statistical analysis.</p>
-				<ul>
-					<li>Course Duration: 12 weeks</li>
-					<li>Prerequisites: Basic programming knowledge</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Artificial Intelligence Basics</h4>
+                <p>Explore the world of artificial intelligence and its impact on various industries.</p>
+                <ul>
+                    <li>Course Duration: 10 weeks</li>
+                    <li>Prerequisites: Python, Mathematics</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
+        </div>
 
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Machine Learning Essentials</h4>
-				<p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
-				<ul>
-					<li>Course Duration: 12 weeks</li>
-					<li>Prerequisites: Python, Data Analysis</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
+        <div class="category">
+            <h3>Mobile App Development</h3>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Mobile App Development with React Native</h4>
+                <p>Build cross-platform mobile apps with React Native framework.</p>
+                <ul>
+                    <li>Course Duration: 10 weeks</li>
+                    <li>Prerequisites: JavaScript, React.js</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Artificial Intelligence Basics</h4>
-				<p>Explore the world of artificial intelligence and its impact on various industries.</p>
-				<ul>
-					<li>Course Duration: 10 weeks</li>
-					<li>Prerequisites: Python, Mathematics</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
-		</div>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Android App Development</h4>
+                <p>Learn how to develop Android applications using Java and Android Studio.</p>
+                <ul>
+                    <li>Course Duration: 8 weeks</li>
+                    <li>Prerequisites: Java Programming</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
 
-		<div class="category">
-			<h3>Mobile App Development</h3>
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Mobile App Development with React Native</h4>
-				<p>Build cross-platform mobile apps with React Native framework.</p>
-				<ul>
-					<li>Course Duration: 10 weeks</li>
-					<li>Prerequisites: JavaScript, React.js</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
-
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>Android App Development</h4>
-				<p>Learn how to develop Android applications using Java and Android Studio.</p>
-				<ul>
-					<li>Course Duration: 8 weeks</li>
-					<li>Prerequisites: Java Programming</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
-
-			<div class="course-card">
-				<img src="path-to-course-image.jpg" alt="Course Image">
-				<h4>iOS App Development</h4>
-				<p>Develop iOS applications using Swift programming language and Xcode.</p>
-				<ul>
-					<li>Course Duration: 8 weeks</li>
-					<li>Prerequisites: Swift Programming</li>
-				</ul>
-				<button>Enroll Now</button>
-			</div>
-		</div>
-	</section>
-</main>
-
-
-
-
-
-	<footer>
-		<p>&copy; 2023 DigiGirls Technnovation</p>
-	</footer>
-	<script src="js/script.js"></script>
-</body>
-
-</html>
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>iOS App Development</h4>
+                <p>Develop iOS applications using Swift programming language and Xcode.</p>
+                <ul>
+                    <li>Course Duration: 8 weeks</li>
+                    <li>Prerequisites: Swift Programming</li>
+                </ul>
+                <button>Enroll Now</button>
+            </div>
+        </div>
+    </section>
+{% endblock %}
 

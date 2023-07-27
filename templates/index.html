@@ -1,42 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiGirls Technnovation</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-
-<body>
-    <header>
-        <h1>DigiGirls Technnovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('courses') }}">Courses</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section>
-            <h2>Begin your journey to become an expert programmer</h2>
-            <p>Sign up for free</p>
-            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
-            <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 DigiGirls Technnovation</p>
-    </footer>
-</body>
-
-</html>
+{% block content %}
+    <section>
+        <h2>Begin your journey to become an expert programmer</h2>
+        <p>Sign up for free</p>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
+    </section>
+{% endblock %}
 
