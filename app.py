@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pymysql
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # Configuration for MySQL database
 DB_HOST = 'localhost'
