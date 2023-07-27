@@ -35,13 +35,6 @@ header {
   width: 100%;
 }
 
-header header {
-  background-image: url("../images/image1.jpg");
-  background-size: cover;
-  background-position: center;
-
-}
-
 /* Improve the typography of the heading */
 header h1 {
   font-size: 3rem; /* Increase the font size for a more prominent heading */
