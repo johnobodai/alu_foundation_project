@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
+<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,4 +38,14 @@
 </body>
 
 </html>
+=======
+{% block content %}
+    <section>
+        <h2>Begin your journey to become an expert programmer</h2>
+        <p>Sign up for free</p>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
+    </section>
+{% endblock %}
+>>>>>>> 65ffa15578ed90be1ff5e3f178ea17180d1a4f51
 

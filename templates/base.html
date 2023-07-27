@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiGirls Technnovation</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>DigiGirls Technnovation</h1>
+        <p>Learn coding from scratch</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('courses') }}">Courses</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            {% if 'user' in session %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+        {# This block will be overridden by content from other templates #}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+
+</body>
+
+</html>
+
