@@ -58,3 +58,5 @@ dist/
 # Vim session files
 Session.vim
 
+# Others
+app.py
