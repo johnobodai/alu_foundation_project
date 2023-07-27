@@ -7,13 +7,29 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
+  }
 
 header {
-  background-color: #333;
+  background-color: black;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
+  list-style: none;
+ }
+ .logo a{
+  font-weight: bold;
+  font-family:Imprint MT Shadow;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  margin-left:2% ;
+
+ }
+
+
+
+sub{
+    color: beige;
+    float: left;
+    margin-left: 2%;
 }
 
 nav {
@@ -26,27 +42,32 @@ nav ul {
   padding: 0;
   margin: 0;
   text-align: center;
+  font-weight: bolder;
 }
 
 nav li {
   display: inline-block;
   margin-right: 1rem;
-}
+  }
+
 
 nav li a {
   color: #fff;
   text-decoration: none;
   padding: 0.5rem;
 }
-
+a:hover{
+  color:orange;
+}
 /* Main styles */
 main {
   padding: 2rem;
   flex: 1; /* Allow main to grow to fill available space */
+   
 }
 
 footer {
-  background-color: #444;
+  background-color: black;
   color: #fff;
   text-align: center;
   padding: 1rem;
