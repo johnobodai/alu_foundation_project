@@ -86,7 +86,10 @@ def login():
         conn.close()
 
         if user:
-            # Set up a session here if you want to manage user authentication
+            # Set up a session to manage user authentication
+            session['user_id'] = user['id']
+
+            # Redirect the user to the dashboard page after successful login
             return redirect(url_for('dashboard'))
         else:
             # Render the 'login.html' template with an error message for invalid login attempts
@@ -98,9 +101,12 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    # Check if the user is authenticated and allowed to access the dashboard
-    # You can manage user authentication using Flask's session or a user authentication library
-    return render_template('dashboard.html')
+    if 'user_id' in session:
+        # User is logged in, render the dashboard template
+        return render_template('dashboard.html')
+    else:
+        # User is not logged in, redirect to the login page
+        return redirect(url_for('login'))
 
 
 @app.route('/about')
