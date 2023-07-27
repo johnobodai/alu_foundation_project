@@ -1,17 +1,16 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiGirls Technnovation</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1>DIgiGirls Technnovation</h1>
+        <h1>DigiGirls Technnovation</h1>
         <p>Learn coding from scratch</p>
     </header>
 
@@ -21,30 +20,24 @@
             <li><a href="{{ url_for('courses') }}">Courses</a></li>
             <li><a href="{{ url_for('about') }}">About Us</a></li>
             <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            {% if 'user' in session %}
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
 
     <main>
-        {% block content %}
-        {% endblock %}
+        {# This block will be overridden by content from other templates #}
+        {% block content %}{% endblock %}
     </main>
 
     <footer>
         <p>&copy; 2023 DigiGirls Technnovation</p>
     </footer>
 
-    <!-- Logout form -->
-    <form id="logoutForm" action="{{ url_for('logout') }}" method="POST" style="display: none;">
-        <button type="submit">Logout</button>
-    </form>
-
-    <script>
-        // JavaScript to handle logout button click
-        document.getElementById('logoutForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            document.getElementById('logoutForm').submit();
-        });
-    </script>
 </body>
+
 </html>
 

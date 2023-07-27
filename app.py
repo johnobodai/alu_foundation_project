@@ -143,7 +143,7 @@ def forgot_password():
 def logout():
     # Clear the user's session to log them out
     session.clear()
-    return redirect(url_for('login'))
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
