@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 import pymysql
 
 app = Flask(__name__, template_folder='templates')
@@ -68,7 +68,7 @@ def register():
         return redirect(url_for('login'))
 
     # Render the 'register.html' template for GET requests (displaying the registration form)
-    return render_template('register.html')
+    return render_template('register')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -81,12 +81,15 @@ def login():
         # Check if the user exists in the database and the provided password is correct
         conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM users WHERE email = %s AND password = %s', (email, password))
+        cursor.execute('SELECT id, password FROM users WHERE email = %s', (email,))
         user = cursor.fetchone()
         conn.close()
 
-        if user:
-            # Set up a session here if you want to manage user authentication
+        if user and user[1] == password:
+            # Set up a session to manage user authentication
+            session['user_id'] = user[0]
+
+            # Redirect the user to the dashboard page after successful login
             return redirect(url_for('dashboard'))
         else:
             # Render the 'login.html' template with an error message for invalid login attempts
@@ -98,9 +101,12 @@ def login():
 
 @app.route('/dashboard')
 def dashboard():
-    # Check if the user is authenticated and allowed to access the dashboard
-    # You can manage user authentication using Flask's session or a user authentication library
-    return render_template('dashboard.html')
+    if 'user_id' in session:
+        # User is logged in, render the dashboard template
+        return render_template('dashboard.html')
+    else:
+        # User is not logged in, redirect to the login page
+        return redirect(url_for('login.html'))
 
 
 @app.route('/about')
@@ -131,6 +137,13 @@ def course_details():
 def forgot_password():
     # Render the 'forgot_password.html' template for the Forgot Password page
     return render_template('forgot_password.html')
+
+
+@app.route('/logout', methods=['POST'])
+def logout():
+    # Clear the user's session to log them out
+    session.clear()
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
