@@ -35,15 +35,6 @@ header p {
   color: black;
 }
 
-/* Add a cool hover effect to the header */
-header:hover {
-  /* Adjust the overlay transparency on hover */
-  background-color: rgba(0, 0, 0, 0.3);
-  /* Add a smooth transition on hover */
-  transition: background-color 0.2s ease;
-  cursor: pointer;
-}
-
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -83,6 +74,15 @@ nav li a {
   padding: 0.5rem;
   font-size: 1.2rem; /* Increase font size */
   font-weight: bold; /* Make the navigation links more prominent */
+}
+
+nav li a:hover {
+  /* Adjust the overlay transparency on hover */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Add a smooth transition on hover */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
 }
 
 /* Main styles */

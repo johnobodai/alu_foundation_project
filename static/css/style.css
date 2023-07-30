@@ -10,39 +10,44 @@ flex-direction: column;*/
 }
 
 header {
+  background-image: url('DGTimage1.jpg');
+  background-size: cover;
+  background-position: center;
   text-align: center;
-  padding: 2rem; /* Increase the padding for more space */
+  padding: 2rem;
   /* Add an animation effect */
   animation: fadeInDown 1s ease;
   /* Use a different font family */
   font-family: 'Helvetica', Arial, sans-serif;
 }
 
-/* Improve the typography of the heading */
-header h1 {
-  font-size: 3rem; /* Increase the font size for a more prominent heading */
-    margin: 0;
-    /* Add a color-changing animation */
-    animation: colorChange 2s infinite;
-  }
-  
-  @keyframes colorChange {
-    0% {
-      color: rgb(122, 167, 100);
-    }
-    50% {
-      color: lightgray;
-    }
-    100% {
-      color: rgb(122, 167, 100);
-    }
-  }
-
-header p {
-  font-size: 1.2rem; /* Increase the font size for the paragraph */
-  color: black;
+header h1, header p {
+  margin: 0;
+  padding: 0;
 }
 
+header h1 {
+  font-size: 3rem; /* Increase the font size for a more prominent heading */
+  /* Add a color-changing animation */
+  animation: colorChange 2s infinite;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(122, 167, 100);
+  }
+  50% {
+    color: lightgray;
+  }
+  100% {
+    color: rgb(122, 167, 100);
+  }
+  }
 
 @keyframes fadeInDown {
   0% {
@@ -501,3 +506,4 @@ main {
     padding: 1rem;
   }
 }
+
