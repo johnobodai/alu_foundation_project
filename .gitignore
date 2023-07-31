@@ -60,3 +60,5 @@ Session.vim
 
 # Others
 app.py
+setup.py
+config.py

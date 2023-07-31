@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrolled Courses - Your Web Application</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i></a></li>
+      <li><a href="{{ url_for('courses') }}"><i class="fas fa-book"></i></a></li>
+      <li><a href="{{ url_for('progress') }}"><i class="fas fa-chart-line"></i></a></li>
+      <li><a href="{{ url_for('profile') }}"><i class="fas fa-user"></i></a></li>
+      <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="enrolled-courses">
+      <h2>Enrolled Courses</h2>
+      <div class="course-list">
+        {% for course in enrolled_courses %}
+        <div class="course-card">
+          <img src="path-to-course-image.jpg" alt="Course Image">
+          <h4>{{ course.course_name }}</h4>
+          <p>{{ course.course_description }}</p>
+          <ul>
+            <li>Course ID: {{ course.course_id }}</li>
+            <li>Duration: {{ course.course_duration }} weeks</li>
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+  </footer>
+</body>
+
+</html>
+

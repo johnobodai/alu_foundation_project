@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - Your Web Application</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i></a></li>
+      <li><a href="{{ url_for('courses') }}"><i class="fas fa-book"></i></a></li>
+      <li><a href="{{ url_for('progress') }}"><i class="fas fa-chart-line"></i></a></li>
+      <li><a href="{{ url_for('profile') }}"><i class="fas fa-user"></i></a></li>
+      <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>User Profile</h1>
+    <!-- Display user details -->
+    <p><strong>Title:</strong> {{ user['title'] }}</p>
+    <p><strong>First Name:</strong> {{ user['first_name'] }}</p>
+    <p><strong>Last Name:</strong> {{ user['last_name'] }}</p>
+    <p><strong>Age:</strong> {{ user['age'] }}</p>
+    <p><strong>Gender:</strong> {{ user['gender'] }}</p>
+    <p><strong>Country:</strong> {{ user['country'] }}</p>
+    <p><strong>Email:</strong> {{ user['email'] }}</p>
+
+    <!-- Link to edit profile -->
+    <a href="{{ url_for('edit_profile') }}">Edit Profile</a>
+
+    <form action="{{ url_for('dashboard') }}" method="get">
+      <button type="submit">Back to Dashboard</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+  </footer>
+</body>
+
+</html>
+

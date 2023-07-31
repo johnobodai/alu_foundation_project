@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>500 - Internal Server Error</h1>
+    <p>Sorry, something went wrong on our end. Please try again later.</p>
+{% endblock %}
+
+{% block error %}
+    {% set error_message = "Oops! Something went wrong on our end. Please try again later." %}
+    {{ super() }}
+{% endblock %}
+

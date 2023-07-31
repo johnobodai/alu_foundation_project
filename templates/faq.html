@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Your Web Application</title>
+  <!-- Link to your custom CSS file for the FAQ page -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/faq.css') }}">
+</head>
+
+<body>
+  <header>
+    <h1>FAQ - Your Web Application</h1>
+    <p>Learn more about your web application</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('index') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About Us</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+      <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+      <!-- Add other navigation links as needed -->
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item">
+      <h3>Question 1: What is your web application about?</h3>
+      <p>Your answer to the first question goes here.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Question 2: How do I sign up for an account?</h3>
+      <p>Your answer to the second question goes here.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Question 3: How can I reset my password?</h3>
+      <p>Your answer to the third question goes here.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>How do I reset my password?</h3>
+      <p>Instructions on how to reset your password can be found on the login page.</p>
+    </div>
+
+    <!-- Add more questions and answers here -->
+  </main>
+
+  <footer>
+    <p>&copy; 2023 DigiGirls Technnovation </p>
+  </footer>
+</body>
+
+</html>
+

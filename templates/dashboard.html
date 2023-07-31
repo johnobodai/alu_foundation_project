@@ -1,53 +1,65 @@
-<!-- templates/dashboard.html -->
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-    <section id="courses" class="course-grid">
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Introduction to HTML and CSS</h4>
-            <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
-            <ul>
-                <li>Course Duration: 4 weeks</li>
-                <li>Prerequisites: None</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Your Web Application</title>
+  <!-- Link to your custom CSS file for the Dashboard page -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>JavaScript Fundamentals</h4>
-            <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
-            <ul>
-                <li>Course Duration: 6 weeks</li>
-                <li>Prerequisites: Basic knowledge of HTML/CSS</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+<body>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
+      <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
+      <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
+      <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
+      <li><a href="{{ url_for('logout') }}" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+    </ul>
+  </nav>  <main>
+    {% if 'user_id' in session %}
+      <h2>Welcome to Your Dashboard, {{ current_user.email }}!</h2>
+      <p>Here you can view your progress, enrolled courses, and more.</p>
+      <h4>Enrolled Courses:</h4>
+      {% if current_user.courses %}
+        <ul>
+          {% for course in current_user.courses %}
+            <li>{{ course.name }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No courses enrolled yet.</p>
+      {% endif %}
 
-        <!-- Add more course cards here -->
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Front-End Web Development</h4>
-            <p>Learn the essentials of front-end web development and create responsive websites.</p>
-            <ul>
-                <li>Course Duration: 10 weeks</li>
-                <li>Prerequisites: HTML, CSS, JavaScript</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+      <h4>Completed Lessons:</h4>
+      {% if current_user.completed_lessons %}
+        <ul>
+          {% for lesson in current_user.completed_lessons %}
+            <li>{{ lesson.title }} (Course: {{ lesson.course.name }})</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No lessons completed yet.</p>
+      {% endif %}
 
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Data Science with R</h4>
-            <p>Explore data science concepts using R programming language and statistical analysis.</p>
-            <ul>
-                <li>Course Duration: 12 weeks</li>
-                <li>Prerequisites: Basic programming knowledge</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
-        <!-- Add more course cards here -->
-    </section>
-{% endblock %}
+      <h4>Progress:</h4>
+      <p>{{ current_user.progress }}% completed</p>
+
+      <!-- Add other personalized dashboard content here -->
+
+    {% else %}
+      <p>You need to <a href="{{ url_for('login') }}">log in</a> or <a href="{{ url_for('signup') }}">sign up</a> to access your dashboard.</p>
+    {% endif %}
+  </main>
+</body>
+
+<footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+</footer>
+
+
+</html>
 

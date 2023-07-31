@@ -1,0 +1,149 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Global styles */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the body takes at least the full viewport height */
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #333;
+  width: 60px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list a {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #777;
+}
+
+/* Main content styles */
+main {
+  flex: 1; /* Let the main content take all the available vertical space */
+  margin-left: 80px;
+  padding: 20px;
+  /* Add some space between the main content and footer */
+  margin-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
+  justify-content: space-between;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: fixed; /* Keep the footer fixed at the bottom of the screen */
+  width: 100%;
+  bottom: 0;
+}
+
+/* Course category styles */
+#course-categories {
+  display: flex;
+  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
+  justify-content: space-between;
+}
+
+#course-categories .category {
+  flex-basis: calc(33.33% - 20px); /* Each category takes equal space in a column */
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#course-categories h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Course card styles */
+.course-card {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%; /* Make sure each course card takes full width */
+}
+
+.course-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.course-card h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.course-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.course-card ul {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.course-card li {
+  margin-bottom: 5px;
+}
+
+.course-card button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.course-card button:hover {
+  background-color: #0056b3;
+}
+
