@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +10,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.4.0-web/css/all.min.css') }}">
     <script src="https://js.stripe.com/v3/"></script>
 </head>
-
 <body>
+    <!--<header>
+        <div class="logo"><a href="#">DigiGirls Technnovation</a></div>
+        <sub>Learn Coding From Scratch</sub>
+    </header>-->
     <header>
         <h1>DigiGirls Technnovation</h1>
         <p>Learn coding from scratch</p>
     </header>
-
     <nav>
         <ul>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -49,10 +50,10 @@
         {% endif %}
     </main>
 
-    <footer>
-        <p>&copy; 2023 DigiGirls Technnovation</p>
-    </footer>
-
-</body>
+ <footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+ </footer>
+	</body>
 
 </html>
+

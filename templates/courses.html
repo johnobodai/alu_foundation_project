@@ -1,147 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses - Your Web Application</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Your Web Application</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
-  <nav>
-    <ul class="nav-list">
-      <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i></a></li>
-      <li><a href="{{ url_for('courses') }}"><i class="fas fa-book"></i></a></li>
-      <li><a href="{{ url_for('progress') }}"><i class="fas fa-chart-line"></i></a></li>
-      <li><a href="{{ url_for('profile') }}"><i class="fas fa-user"></i></a></li>
-      <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
-    </ul>
-  </nav>
+<nav>
+<ul class="nav-list">
+  <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i></a></li>
+  <li><a href="{{ url_for('courses') }}"><i class="fas fa-book"></i></a></li>
+  <li><a href="{{ url_for('progress') }}"><i class="fas fa-chart-line"></i></a></li>
+  <li><a href="{{ url_for('profile') }}"><i class="fas fa-user"></i></a></li>
+  <li><a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i></a></li>
+</ul>
+</nav>
 
-  <main>
-    <section id="course-categories">
-      <!-- Web Development -->
-      <div class="category">
-        <h3>Web Development</h3>
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Introduction to HTML and CSS</h4>
-          <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
-          <ul>
-            <li>Course Duration: 4 weeks</li>
-            <li>Prerequisites: None</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=1) }}" class="btn">Enroll Now</a>
-        </div>
+<main>
+<section id="course-categories">
+  <!-- Web Development -->
+  <div class="category">
+	<h3>Web Development</h3>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Introduction to HTML and CSS</h4>
+	  <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
+	  <ul>
+		<li>Course Duration: 4 weeks</li>
+		<li>Prerequisites: None</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=1) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>JavaScript Fundamentals</h4>
-          <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
-          <ul>
-            <li>Course Duration: 6 weeks</li>
-            <li>Prerequisites: Basic knowledge of HTML/CSS</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=2) }}" class="btn">Enroll Now</a>
-        </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>JavaScript Fundamentals</h4>
+	  <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
+	  <ul>
+		<li>Course Duration: 6 weeks</li>
+		<li>Prerequisites: Basic knowledge of HTML/CSS</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=2) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Front-End Web Development</h4>
-          <p>Learn the essentials of front-end web development and create responsive websites.</p>
-          <ul>
-            <li>Course Duration: 10 weeks</li>
-            <li>Prerequisites: HTML, CSS, JavaScript</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=3) }}" class="btn">Enroll Now</a>
-        </div>
-      </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Front-End Web Development</h4>
+	  <p>Learn the essentials of front-end web development and create responsive websites.</p>
+	  <ul>
+		<li>Course Duration: 10 weeks</li>
+		<li>Prerequisites: HTML, CSS, JavaScript</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=3) }}" class="btn">Enroll Now</a>
+	</div>
+  </div>
 
-      <!-- Data Science -->
-      <div class="category">
-        <h3>Data Science</h3>
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Data Science with R</h4>
-          <p>Explore data science concepts using R programming language and statistical analysis.</p>
-          <ul>
-            <li>Course Duration: 12 weeks</li>
-            <li>Prerequisites: Basic programming knowledge</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=4) }}" class="btn">Enroll Now</a>
-        </div>
+  <!-- Data Science -->
+  <div class="category">
+	<h3>Data Science</h3>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Data Science with R</h4>
+	  <p>Explore data science concepts using R programming language and statistical analysis.</p>
+	  <ul>
+		<li>Course Duration: 12 weeks</li>
+		<li>Prerequisites: Basic programming knowledge</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=4) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Machine Learning Essentials</h4>
-          <p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
-          <ul>
-            <li>Course Duration: 12 weeks</li>
-            <li>Prerequisites: Python, Data Analysis</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=5) }}" class="btn">Enroll Now</a>
-        </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Machine Learning Essentials</h4>
+	  <p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
+	  <ul>
+		<li>Course Duration: 12 weeks</li>
+		<li>Prerequisites: Python, Data Analysis</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=5) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Artificial Intelligence Basics</h4>
-          <p>Explore the world of artificial intelligence and its impact on various industries.</p>
-          <ul>
-            <li>Course Duration: 10 weeks</li>
-            <li>Prerequisites: Python, Mathematics</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=6) }}" class="btn">Enroll Now</a>
-        </div>
-      </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Artificial Intelligence Basics</h4>
+	  <p>Explore the world of artificial intelligence and its impact on various industries.</p>
+	  <ul>
+		<li>Course Duration: 10 weeks</li>
+		<li>Prerequisites: Python, Mathematics</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=6) }}" class="btn">Enroll Now</a>
+	</div>
+  </div>
 
-      <!-- Mobile App Development -->
-      <div class="category">
-        <h3>Mobile App Development</h3>
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Mobile App Development with React Native</h4>
-          <p>Build cross-platform mobile apps with React Native framework.</p>
-          <ul>
-            <li>Course Duration: 10 weeks</li>
-            <li>Prerequisites: JavaScript, React.js</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=7) }}" class="btn">Enroll Now</a>
-        </div>
+  <!-- Mobile App Development -->
+  <div class="category">
+	<h3>Mobile App Development</h3>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Mobile App Development with React Native</h4>
+	  <p>Build cross-platform mobile apps with React Native framework.</p>
+	  <ul>
+		<li>Course Duration: 10 weeks</li>
+		<li>Prerequisites: JavaScript, React.js</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=7) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>Android App Development</h4>
-          <p>Learn how to develop Android applications using Java and Android Studio.</p>
-          <ul>
-            <li>Course Duration: 8 weeks</li>
-            <li>Prerequisites: Java Programming</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=8) }}" class="btn">Enroll Now</a>
-        </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>Android App Development</h4>
+	  <p>Learn how to develop Android applications using Java and Android Studio.</p>
+	  <ul>
+		<li>Course Duration: 8 weeks</li>
+		<li>Prerequisites: Java Programming</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=8) }}" class="btn">Enroll Now</a>
+	</div>
 
-        <div class="course-card">
-          <img src="path-to-course-image.jpg" alt="Course Image">
-          <h4>iOS App Development</h4>
-          <p>Develop iOS applications using Swift programming language and Xcode.</p>
-          <ul>
-            <li>Course Duration: 8 weeks</li>
-            <li>Prerequisites: Swift Programming</li>
-          </ul>
-          <a href="{{ url_for('enroll', course_id=9) }}" class="btn">Enroll Now</a>
-        </div>
-      </div>
+	<div class="course-card">
+	  <img src="path-to-course-image.jpg" alt="Course Image">
+	  <h4>iOS App Development</h4>
+	  <p>Develop iOS applications using Swift programming language and Xcode.</p>
+	  <ul>
+		<li>Course Duration: 8 weeks</li>
+		<li>Prerequisites: Swift Programming</li>
+	  </ul>
+	  <a href="{{ url_for('enroll', course_id=9) }}" class="btn">Enroll Now</a>
+	</div>
+  </div>
 
-      <!-- Add more categories and course cards as needed -->
+  <!-- Add more categories and course cards as needed -->
 
-    </section>
-  </main>
+</section>
+</main>
 
-  <footer>
-    <p>&copy; 2023 DigiGirls Technnovation</p>
-  </footer>
+<footer>
+<p>&copy; 2023 DigiGirls Technnovation</p>
+</footer>
 </body>
 
 </html>
-
