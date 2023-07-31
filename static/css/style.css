@@ -4,37 +4,70 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+/*  display: flex;
+flex-direction: column;*/
   min-height: 100vh;
-  }
+}
 
 header {
-  background-color: black;
-  color: #fff;
-  list-style: none;
- }
- .logo a{
-  font-weight: bold;
-  font-family:Imprint MT Shadow;
-  list-style: none;
-  text-decoration: none;
-  color: white;
-  margin-left:2% ;
+  background-image: url('DGTimage1.jpg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 2rem;
+  /* Add an animation effect */
+  animation: fadeInDown 1s ease;
+  /* Use a different font family */
+  font-family: 'Helvetica', Arial, sans-serif;
+}
 
- }
+header h1, header p {
+  margin: 0;
+  padding: 0;
+}
 
+header h1 {
+  font-size: 3rem; /* Increase the font size for a more prominent heading */
+  /* Add a color-changing animation */
+  animation: colorChange 2s infinite;
+}
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-sub{
-    color: beige;
-    float: left;
-    margin-left: 2%;
+@keyframes colorChange {
+  0% {
+    color: rgb(122, 167, 100);
+  }
+  50% {
+    color: lightgray;
+  }
+  100% {
+    color: rgb(122, 167, 100);
+  }
+  }
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 nav {
-  background-color: #444;
+  /* Add light color to the navigation bar */
+  background-color:light;
   padding: 0.5rem;
+  /* Add a slight box-shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add a subtle animation effect */
+  animation: fadeIn 1s ease;
 }
 
 nav ul {
@@ -42,42 +75,85 @@ nav ul {
   padding: 0;
   margin: 0;
   text-align: center;
-  font-weight: bolder;
 }
 
 nav li {
   display: inline-block;
   margin-right: 1rem;
-  }
-
+}
 
 nav li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   padding: 0.5rem;
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make the navigation links more prominent */
 }
-a:hover{
-  color:orange;
+
+/* Add a cool hover effect to the nav */
+nav li a:hover {
+  /* Adjust the overlay transparency on hover */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Add a smooth transition on hover */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
 }
+
 /* Main styles */
 main {
   padding: 2rem;
-  flex: 1; /* Allow main to grow to fill available space */
-   
+  flex: 1;
+  /* Allow main to grow to fill available space */
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add an animation effect */
+  animation: slideInUp 3s ease;
+}
+
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 footer {
-  background-color: black;
-  color: #fff;
+  /* Use a background color for the footer */
+  background-color: whitesmoke;
+  color:black; /* Change text color to white for better contrast */
   text-align: center;
   padding: 1rem;
   margin-top: auto;
+  /* Add the bounce animation */
+  animation: bounce 2s infinite;
+  /* Add rounded corners to the footer */
+  border-radius: 10px;
+}
+
+footer p {
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Home page specific styles */
 h1 {
   margin: 0;
 }
+
+
 
 /* Sign-up page specific styles */
 form {
@@ -143,6 +219,7 @@ footer p {
   text-align: center;
 }
 
+
 /* About Us page specific styles */
 #about {
   text-align: center;
@@ -175,6 +252,7 @@ footer p {
   padding: 2rem;
   background-color: #f7f7f7;
   border-radius: 5px;
+  background-position: center;
 }
 
 .contact-form h2 {
@@ -192,14 +270,31 @@ footer p {
   width: 100%;
   padding: 0.5rem;
   margin-bottom: 1rem;
+  
 }
 
-.contact-form button {
-  background-color: #333;
+.contact-section button {
   color: #fff;
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add rounded corners */
+  border-radius: 5px;
+  /* Add box-shadow and a hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  justify-content: center;
+}
+
+.contact-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #555;
 }
 
 /* Add some responsive styles for better user experience on smaller screens */
@@ -215,6 +310,11 @@ footer p {
   }
 }
 
+/*forgot_password page*/
+h2 {
+  text-align: center;
+}
+
 /* Additional styles for the contact page */
 main {
   display: flex;
@@ -228,6 +328,7 @@ main {
   background-color: #f9f9f9;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  
 }
 
 .contact-section h2 {
@@ -321,10 +422,17 @@ main {
 }
 
 .course-card {
-  margin-top: 1rem;
-  padding: 1rem;
+  /* Add a background color to the card */
+  background-color: #f9f9f9;
+  /* Add border and box-shadow for a card-like appearance */
   border: 1px solid #ccc;
-  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  /* Add rounded corners */
+  border-radius: 10px;
+  /* Add a smooth transition on hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .course-card img {
@@ -334,12 +442,38 @@ main {
   border-radius: 5px;
 }
 
+/* Improve the button's design */
+.course-card button {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  /* Add a gradient background */
+  background-color: rgb(122, 167, 100);
+  /* Add rounded corners */
+  border-radius: 5px;
+  /* Add box-shadow and a hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Add hover effect */
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Improve the typography */
 .course-card h4 {
-  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .course-card p {
-  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
 .course-card ul {
@@ -352,16 +486,24 @@ main {
   margin-bottom: 0.3rem;
 }
 
-.course-card button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
+/* Improve button hover effect */
+.course-card button:hover {
+  background-color: #555;
 }
 
-.course-card button:hover {
-  background-color: #444;
+/* Add some responsive styles for better user experience on smaller screens */
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    }
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .contact-form {
+    padding: 1rem;
+  }
 }
 

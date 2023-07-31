@@ -12,15 +12,48 @@ body {
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  
   text-align: center;
-  padding: 1rem;
+  padding: 2rem; /* Increase the padding for more space */
+  /* Add an animation effect */
+  animation: fadeInDown 1s ease;
+
+  /* Use a different font family */
+  font-family: 'Helvetica', Arial, sans-serif;
+}
+
+
+/* Improve the typography of the heading */
+header h1 {
+  font-size: 3rem; /* Increase the font size for a more prominent heading */
+  color: black; /* Change the text color to white for better contrast */
+  margin-bottom: 0.5rem; /* Add some spacing below the heading */
+}
+
+header p {
+  font-size: 1.2rem; /* Increase the font size for the paragraph */
+  color: black;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 nav {
-  background-color: #444;
+  /* Add light color to the navigation bar */
+  background-color:light;
   padding: 0.5rem;
+  /* Add a slight box-shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add a subtle animation effect */
+  animation: fadeIn 1s ease;
 }
 
 nav ul {
@@ -36,54 +69,64 @@ nav li {
 }
 
 nav li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
   padding: 0.5rem;
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make the navigation links more prominent */
+}
+
+nav li a:hover {
+  /* Adjust the overlay transparency on hover */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Add a smooth transition on hover */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+
 }
 
 /* Main styles */
 main {
   padding: 2rem;
-  flex: 1; /* Allow main to grow to fill available space */
-}
-footer {
-  background-color: #444;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top:auto;
+  flex: 1;
+  /* Allow main to grow to fill available space */
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add an animation effect */
+  animation: slideInUp 2s ease;
 }
 
-/* Home page specific styles */
-h1 {
-  margin: 0;
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
 
 /* Course page specific styles */
 
-#course-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
-  margin: 2rem auto;
-}
-
 .category {
-  border: 1px solid #ddd;
   padding: 1rem;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 1rem;
 }
 
 .category h3 {
   margin: 0;
   text-align: center;
+  font-size: 2rem;
+  color:black;
 }
 
 .course-card {
   margin-top: 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 5px;  
 }
 
 .course-card img {
@@ -92,11 +135,6 @@ h1 {
   object-fit: cover;
   border-radius: 5px;
 }
-
-.course-card h4 {
-  margin-top: 1rem;
-}
-
 .course-card p {
   margin-top: 0.5rem;
 }
@@ -111,15 +149,105 @@ h1 {
   margin-bottom: 0.3rem;
 }
 
+
+.course-categories {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* add a colored background*/
+  background-color: aliceblue;
+  border-radius: 10px;
+  grid-gap: 1rem;
+  margin: 2rem auto;
+}
+/* Course card styles */
+
+.course-card {
+  /* Add a background color to the card */
+  background-color: #f9f9f9;
+  background-size: cover;
+  background-position: center;
+  /* Add border and box-shadow for a card-like appearance */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  /* Add rounded corners */
+  border-radius: 10px;
+  /* Add a smooth transition on hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ... (Other styles) ... */
+
+/* Improve the button's design */
 .course-card button {
-  background-color: #333;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
+  border: none;
   cursor: pointer;
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add rounded corners */
   border-radius: 5px;
+  /* Add box-shadow and a hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
-.course-card button:hover {
-  background-color: #444;
+/* Add hover effect */
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+/* Improve the typography */
+.course-card h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  
+}
+
+/* Improve button hover effect */
+.course-card button:hover {
+  background-color: #555;
+}
+
+
+footer {
+  /* Use a background color for the footer */
+  background-color: whitesmoke;
+  color:black; /* Change text color to white for better contrast */
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  /* Add rounded corners to the footer */
+  border-radius: 10px;
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(122, 167, 100);
+  }
+  50% {
+    color: lightgray;
+  }
+  100% {
+    color: rgb(122, 167, 100);
+  }
+}
+
+
+/* Home page specific styles */
+h1 {
+  margin: 0;
+}
+
+
+

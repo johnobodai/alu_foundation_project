@@ -1,51 +1,65 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-<<<<<<< HEAD
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigiGirls Technnovation</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
+
 <body>
     <header>
-        <div class="logo"><a href="#">DigiGirls Technnovation</a></div>
-        <sub>Learn Coding From Scratch</sub>
+        <h1>DigiGirls Technovation</h1>
+        <p>Learn coding from scratch</p>
     </header>
 
     <nav>
         <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('courses') }}">Courses</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="../templates/courses.html">Courses</a></li>
+            <li><a href="../templates/about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
     </nav>
 
-    <main style="background-image: url('Images2.JPEG'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+    <main>
+        <section class="home">
+            <div class="home-content">
+                <h2>Begin your journey to become an expert programmer</h2>
+                <a href="register.html">Sign up for free</a>               
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose Us?</h2>
+            <div class="feature-item">
+                <h3>Learn from Experts</h3>
+                <img src="DTGimage3.jpg" alt="Feature 1">
+                <p>Our courses are taught by industry experts with years of experience.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Hands-on Projects</h3>
+                <img src="Images1.jpg" alt="Feature 2">
+                <p>Get hands-on experience by working on real-world projects.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Flexible Learning</h3>
+                <img src="DGTimage.jpg" alt="Feature 3">
+                <p>Learn at your own pace with our flexible online courses.</p>
+            </div>          
+        </section>
+
         <section>
-            <h2>Begin your journey to become an expert programmer</h2>
-            <p>Sign up for free</p>
-            <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
-            <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
         </section>
     </main>
 
     <footer>
-      <b><p>&copy; 2023 DigiGirls Technnovation</p></b> 
+        <p>&copy; 2023 DigiGirls Technnovation. All rights reserved</p>
     </footer>
 </body>
 
 </html>
-=======
-{% block content %}
-    <section>
-        <h2>Begin your journey to become an expert programmer</h2>
-        <p>Sign up for free</p>
-        <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
-        <p>Don't have an account? <a href="{{ url_for('register') }}">Sign Up</a></p>
-    </section>
-{% endblock %}
->>>>>>> 65ffa15578ed90be1ff5e3f178ea17180d1a4f51
-

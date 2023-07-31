@@ -1,53 +1,120 @@
-<!-- templates/dashboard.html -->
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block content %}
-    <section id="courses" class="course-grid">
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Introduction to HTML and CSS</h4>
-            <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
-            <ul>
-                <li>Course Duration: 4 weeks</li>
-                <li>Prerequisites: None</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiGirls Technnovation - Login</title>
+	<link rel="stylesheet" href="../static/css/dashboard-style.css">
+</head>
 
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>JavaScript Fundamentals</h4>
-            <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
-            <ul>
-                <li>Course Duration: 6 weeks</li>
-                <li>Prerequisites: Basic knowledge of HTML/CSS</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+<body>
+    <header>
+        <h1>DigiGirls Technovation</h1>
+        <p>Learn coding from scratch</p>
+    </header>
 
-        <!-- Add more course cards here -->
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Front-End Web Development</h4>
-            <p>Learn the essentials of front-end web development and create responsive websites.</p>
-            <ul>
-                <li>Course Duration: 10 weeks</li>
-                <li>Prerequisites: HTML, CSS, JavaScript</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
+    <nav>
+        <ul>
+            <li><a href="../templates/index.html">Home</a></li>
+            <li><a href="../templates/courses.html">Courses</a></li>
+            <li><a href="../templates/about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="courses" class="course-grid">
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Introduction to HTML and CSS</h4>
+                <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
+                <h5>
+                    Course Duration: 4 weeks <br>
+                    Prerequisites: None
+                <h5>
+                <button>Start Course</button>
+            </div>
 
-        <div class="course-card">
-            <img src="path-to-course-image.jpg" alt="Course Image">
-            <h4>Data Science with R</h4>
-            <p>Explore data science concepts using R programming language and statistical analysis.</p>
-            <ul>
-                <li>Course Duration: 12 weeks</li>
-                <li>Prerequisites: Basic programming knowledge</li>
-            </ul>
-            <button>Start Course</button>
-        </div>
-        <!-- Add more course cards here -->
-    </section>
-{% endblock %}
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>JavaScript Fundamentals</h4>
+                <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
+                <h5>
+                    Course Duration: 6 weeks <br> Prerequisites: Basic knowledge of HTML/CSS
+                </h5>
+                <button>Start Course</button>
+            </div>
+
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Python for Beginners</h4>
+                <p>Learn Python programming language from scratch and build simple applications.</p>
+                <h5>
+                    Course Duration: 8 weeks <br>
+                    Prerequisites: None
+                </h5>
+                <button>Start Course</button>
+            </div>
+
+            <!-- Add more course cards here -->
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Front-End Web Development</h4>
+                <p>Learn the essentials of front-end web development and create responsive websites.</p>
+                <h5>
+                    Course Duration: 10 weeks <br> Prerequisites: HTML, CSS, JavaScript
+                </h5>
+                <button>Start Course</button>
+            </div>
+
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Data Science with R</h4>
+                <p>Explore data science concepts using R programming language and statistical analysis.</p>
+                <h5>
+                    Course Duration: 12 weeks <br> Prerequisites: Basic programming knowledge
+                </h5>
+                <button>Start Course</button>
+            </div>
+
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Back-End Development with Node.js</h4>
+                <p>Learn back-end web development using Node.js, Express, and MongoDB.</p>
+                <h5>Course Duration: 12 weeks <br>
+                    Prerequisites: Python, Data Analysis
+                </h5>
+                <button>Start Course</button>
+            </div>
+
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Machine Learning Essentials</h4>
+                <p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
+                <h5>Course Duration: 12 weeks <br>
+                    Prerequisites: Python, Data Analysis</h5>
+                <button>Start Course</button>
+            </div>
+
+            <div class="course-card">
+                <img src="path-to-course-image.jpg" alt="Course Image">
+                <h4>Cybersecurity Fundamentals</h4>
+                <p>Learn about cybersecurity threats, practices, and how to secure digital assets.</p>
+                <h5>
+                    Course Duration: 8 weeks <br> Prerequisites: Basic computer knowledge
+                </h5>
+                <button>Start Course</button>
+            </div>
+        </section>
+    </main>
+
+	<footer>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+
+</body>
+
+</html>
 
