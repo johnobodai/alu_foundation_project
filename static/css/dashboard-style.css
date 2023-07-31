@@ -1,0 +1,246 @@
+/* style.css */
+
+*{
+  margin: 0 auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#header img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  
+  text-align: center;
+  padding: 2rem; /* Increase the padding for more space */
+  /* Add an animation effect */
+  animation: fadeInDown 1s ease;
+
+  /* Use a different font family */
+  font-family: 'Helvetica', Arial, sans-serif;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Improve the typography of the heading */
+header h1 {
+  font-size: 3rem; /* Increase the font size for a more prominent heading */
+  color: black; /* Change the text color to white for better contrast */
+  margin-bottom: 0.5rem; /* Add some spacing below the heading */
+}
+
+header p {
+  font-size: 1.2rem; /* Increase the font size for the paragraph */
+  color: black;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  /* Add light color to the navigation bar */
+  background-color:light;
+  padding: 0.5rem;
+  /* Add a slight box-shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Add a subtle animation effect */
+  animation: fadeIn 1s ease;
+  margin: 0 auto;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav li a {
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1.2rem; /* Increase font size */
+  font-weight: bold; /* Make the navigation links more prominent */
+}
+
+/* Add a cool hover effect to the nav */
+nav li a:hover {
+  /* Adjust the overlay transparency on hover */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* Add a smooth transition on hover */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+
+/* Main styles */
+main {
+  padding: 2rem;
+  flex: 1;
+  /* Allow main to grow to fill available space */
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add an animation effect */
+  animation: slideInUp 2s ease;
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+footer {
+  /* Use a background color for the footer */
+  background-color: whitesmoke;
+  color:black; /* Change text color to white for better contrast */
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+  /* Remove the heartbeat animation and add the bounce animation */
+  animation: bounce 2s infinite;
+  /* Add rounded corners to the footer */
+  border-radius: 10px;
+
+  margin: 0 auto;
+  width: 100%;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Home page specific styles */
+h1 {
+  margin: 0;
+  /* Add a color-changing animation */
+  animation: colorChange 2s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    color: rgb(122, 167, 100);
+  }
+  50% {
+    color: lightgray;
+  }
+  100% {
+    color: rgb(122, 167, 100);
+  }
+}
+
+/* dashboard-style.css */
+
+/* Course grid layout */
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 1rem;
+}
+
+#course-categoties .category .course-card {
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  grid-gap: 2rem;
+  
+}
+/* Course card styles */
+
+.course-card {
+  /* Add a background color to the card */
+  background-color: #f9f9f9;
+  /* Add a subtle background image to the card */
+  background-image: url("path-to-background-image.jpg");
+  background-size: cover;
+  background-position: center;
+  /* Add border and box-shadow for a card-like appearance */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  /* Add rounded corners */
+  border-radius: 10px;
+  /* Add a smooth transition on hover */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ... (Other styles) ... */
+
+/* Improve the button's design */
+.course-card button {
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  /* Add a colored background */
+  background-color:rgb(122, 167, 100);
+  /* Add rounded corners */
+  border-radius: 5px;
+  /* Add box-shadow and a hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Add hover effect */
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Improve the typography */
+.course-card h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.course-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Improve button hover effect */
+.course-card button:hover {
+  background-color: #555;
+}
