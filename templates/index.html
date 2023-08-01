@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiGirls Technnovation</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="../static/css/style.css">
+        <title>DigiGirls Technnovation</title>
+    </head>
 <body>
+    <!--<header>
+        <div class="logo"><a href="#">DigiGirls Technnovation</a></div>
+        <sub>Learn Coding From Scratch</sub>
+    </header>-->
     <header>
-        <h1>DigiGirls Technnovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
-
-    <nav>
-        <ul>
+        <div class="navbar">
+            <div class="logo"><a href="#"><b>DigiGirls Technnovation</b><br></a><sub>Learn Coding From Scratch</sub></a></div>
+            <ul class="links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us </a></li>
+                <li><a href="{{ url_for('courses') }}">Courses</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+            <a href="#" class="action_btn">Get started</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div> 
+        </div>
+        <div class="dropdown_menu open ">
             <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('courses') }}">Courses</a></li>
             <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('courses') }}">Courses</a></li>
             <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-        </ul>
-    </nav>
+            <li><a href="#" class="action_btn">Get started</a></li>
+        </div> 
+    </header>
+        <main>
+        <section id="hero">
+         <img src="Images2.jpg">
+          <h2>Begin your journey to become an expert programmer</h2>
+              
+         </div> 
+          <i>Already have an account?</i>
+          <a href="{{ url_for('login') }}" class="action_btn">Login</a></p>
+          <i>Don't have an account?</i> <a href="{{ url_for('register') }}" class="action_btn">Sign up for free</a></p>
+        </section>  
+      </main>
+      <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+        
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
 
-    <main>
-        <section>
-            <h2>Begin your journey to become an expert programmer</h2>
-            <p>Sign up for free</p>
-            <p>Already have an account? <a href="login.html">Login</a></p>
-            <p>Don't have an account? <a href="register.html">Sign Up</a></p> <!-- Added link to Sign Up page -->
-        </section>
-    </main>
+            toggleBtnIcon.classList = isOpen
+            ?'fa-solid fa-xmark'
+            :'fa-solid fa-bars'
+        }
+    </script>
 
     <footer>
-        <p>&copy; 2023 DigiGirls Technnovation</p>
+      <b><p>&copy; 2023 DigiGirls Technnovation</p></b> 
     </footer>
 </body>
 

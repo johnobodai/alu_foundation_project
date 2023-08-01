@@ -1,64 +1,176 @@
 /* Global styles */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  background-color:whitesmoke;
+  background-image: url('Images2.Jpg');
+  background-size: cover;
+  background-position: center; 
+  }
+
+  li{
+    list-style: none;
+    
+ } 
+ a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+a:hover{
+  color:orange;
+}
+/*HEADER */
+header {
+  position: relative;
+  padding: 0 2rem;
+  background-color:green;
+  
+}
+.navbar{
+  height: 100%;
+  width: Auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+sub{
+  font-size: larger;
+  font-weight: lighter;
+}
+ .navbar .logo a {
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family:Imprint MT Shadow;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+  font-weight: bold;
+}
+
+.navbar .toggle_btn{
+  color: #fff;
+  font-size: 2 rem;
+  cursor: pointer;
+  display: none;  
+}
+
+.action_btn{
+  background-color: orange;
+  color:#fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease ;
+}
+
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+.action_btn:active{
+  scale: 0.95;
+}
+
+/* DROPDOWN MENU*/ 
+.dropdown_menu{
+  display: none;
+  position: absolute;
+  right:2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.dropdown_menu .open{
+  height: 240px;
+  display: block;
+
+}
+.dropdown_menu li{
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*HERO*/
+section#hero {
+  height: calc(100vh - 60px);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #333;
-  color: #fff;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 1rem;
+  color: black;
 }
 
-nav {
-  background-color: #444;
-  padding: 0.5rem;
+#hero h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: bisque;
+  font-weight: bolder;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+/*RESPONSIVE DESIGN*/
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+      display:none;
+  }
+  .navbar .toggle_btn{
+      display: block;
+  }
+
+  .dropdown_menu{
+      display: block;
+  }
 }
 
-nav li {
-  display: inline-block;
-  margin-right: 1rem;
+@media (max-width: 576px) {
+  .dropdown_menu{
+      left: 2rem;
+      width: unset;
+  }
 }
 
-nav li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 0.5rem;
+sub{
+    color: beige;
+    float: left;
+    margin-left: 2%;
 }
-
-/* Main styles */
-main {
-  padding: 2rem;
-  flex: 1; /* Allow main to grow to fill available space */
-}
-
 footer {
-  background-color: #444;
+  background-color:green;
   color: #fff;
   text-align: center;
   padding: 1rem;
   margin-top: auto;
 }
-
-/* Home page specific styles */
-h1 {
-  margin: 0;
-}
-
-/* Sign-up page specific styles */
 form {
   max-width: 400px;
   margin: 0 auto;
@@ -193,154 +305,3 @@ footer p {
     padding: 1rem;
   }
 }
-
-/* Additional styles for the contact page */
-main {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.contact-section {
-  flex: 1 1 300px;
-  margin: 1rem;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.contact-section h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-}
-
-.contact-form label,
-.contact-form textarea,
-.contact-form button,
-.feedback-form label,
-.feedback-form textarea,
-.feedback-form button {
-  display: block;
-  width: 100%;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.feedback-form textarea {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contact-form textarea,
-.feedback-form textarea {
-  resize: vertical;
-}
-
-.contact-form button,
-.feedback-form button {
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.contact-form button:hover,
-.feedback-form button:hover {
-  background-color: #555;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.social-links a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: #333;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 40px;
-  color: #fff;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
-
-  .contact-section {
-    flex: 1 1 auto;
-  }
-}
-
-/* Course page specific styles */
-#course-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  grid-gap: 1rem;
-  margin: 2rem auto;
-}
-
-.category {
-  border: 1px solid #ddd;
-  padding: 1rem;
-}
-
-.category h3 {
-  margin: 0;
-  text-align: center;
-}
-
-.course-card {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.course-card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.course-card h4 {
-  margin-top: 1rem;
-}
-
-.course-card p {
-  margin-top: 0.5rem;
-}
-
-.course-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.course-card ul li {
-  margin-bottom: 0.3rem;
-}
-
-.course-card button {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.course-card button:hover {
-  background-color: #444;
-}
-
