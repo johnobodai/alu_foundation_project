@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <!-- Add your head content here -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/lesson.css') }}">
 </head>
+
 
 <body>
     <nav>
@@ -22,7 +26,7 @@
 
     <main>
         <section>
-            <h2><a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=1) }}">{{ lesson_details.lesson_1_title }}</a></h2>
+            <h2>Lesson 1: <a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=1) }}">{{ lesson_details.lesson_1_title }}</a></h2>
             <p>{{ lesson_details.lesson_1_content }}</p>
             <p>Duration: {{ lesson_details.lesson_1_duration }}</p>
             <p>Instructor: {{ lesson_details.lesson_1_instructor }}</p>
@@ -30,7 +34,7 @@
         <hr>
 
         <section>
-            <h2><a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=2) }}">{{ lesson_details.lesson_2_title }}</a></h2>
+            <h2>Lesson 2: <a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=2) }}">{{ lesson_details.lesson_2_title }}</a></h2>
             <p>{{ lesson_details.lesson_2_content }}</p>
             <p>Duration: {{ lesson_details.lesson_2_duration }}</p>
             <p>Instructor: {{ lesson_details.lesson_2_instructor }}</p>
@@ -38,7 +42,7 @@
         <hr>
 
         <section>
-            <h2><a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=3) }}">{{ lesson_details.lesson_3_title }}</a></h2>
+            <h2>Lesson 3: <a href="{{ url_for('individual_lesson', course_id=lesson_details.id, lesson_number=3) }}">{{ lesson_details.lesson_3_title }}</a></h2>
             <p>{{ lesson_details.lesson_3_content }}</p>
             <p>Duration: {{ lesson_details.lesson_3_duration }}</p>
             <p>Instructor: {{ lesson_details.lesson_3_instructor }}</p>
