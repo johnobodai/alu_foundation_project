@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, g
+from flask_wtf import FlaskForm, CSRFProtect
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Email, EqualTo
 import pymysql
 import bcrypt
 import secrets
-
-
-
 from flask_login import LoginManager, UserMixin
 
+
+# csrf = CSRFProtect(app)
 app = Flask(__name__, template_folder='templates')
 login_manager = LoginManager(app)
 login_manager.init_app(app)
@@ -68,6 +70,12 @@ def get_user_by_email(email):
 class User(UserMixin):
     def __init__(self, user_id):
         self.id = user_id
+
+#class RegistrationForm(FlaskForm):
+#    email = StringField('Email', validators=[DataRequired(), Email()])
+#    password = PasswordField('Password', validators=[DataRequired()])
+#    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+#    submit = SubmitField('Register')
 
 
 @login_manager.user_loader
@@ -388,14 +396,68 @@ def progress():
     return render_template('progress.html')
 
 
-@app.route('/enroll/<int:course_id>')
+@app.route('/enroll/<int:course_id>', methods=['GET', 'POST'])
 def enroll(course_id):
-    # Add logic to enroll the user in the specified course (using the course_id)
-    # For now, we'll just render the 'enroll.html' template.
-    return render_template('enroll.html', course_id=course_id)
+    # Fetch course info from the database based on the provided course_id
+    conn = get_db()
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+    cursor.execute('SELECT * FROM courses WHERE id = %s', (course_id,))
+    course_info = cursor.fetchone()
+    conn.close()
+
+    if request.method == 'POST':
+        # Process the enrollment form data when it's submitted
+        # Here, you can add logic to enroll the user in the specified course (using the course_id)
+        # For now, we'll just redirect the user to the lesson details page.
+        return redirect(url_for('lesson', course_id=course_id))
+
+    # Render the 'enroll.html' template and pass the course_info to display course details
+    return render_template('enroll.html', course_info=course_info)
+
+
+
+    # Render the 'lesson_details.html' template and pass the lesson_details to display lesson details
+    return render_template('lesson.html', lesson_details=lesson)
+
+
+@app.route('/lesson/<int:course_id>')
+def lesson(course_id):
+    # Connect to the database and fetch lesson details for the specified course_id
+    conn = pymysql.connect(**db_config, autocommit=True)
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+    cursor.execute('SELECT * FROM courses WHERE id = %s', (course_id,))
+    course_details = cursor.fetchone()
+    conn.close()
+
+    if course_details is None:
+        # Course not found, you can handle this case as per your requirement (e.g., redirect to an error page)
+        return render_template('course_not_found.html')
+    
+    # Pass the course details to the 'lesson.html' template
+    return render_template('lesson.html', lesson_details=course_details)
+
+
+# ...
+
+# Route for individual lesson page
+@app.route('/lesson/<int:course_id>/lesson_<int:lesson_number>')
+def individual_lesson(course_id, lesson_number):
+    # Connect to the database and fetch the specific lesson details
+    conn = pymysql.connect(**db_config, autocommit=True)
+    cursor = conn.cursor(pymysql.cursors.DictCursor)
+    cursor.execute('SELECT lesson_%s_title, lesson_%s_content, lesson_%s_duration, lesson_%s_instructor FROM courses WHERE id = %s', (lesson_number, lesson_number, lesson_number, lesson_number, course_id,))
+    lesson_details = cursor.fetchone()
+    conn.close()
+
+    if lesson_details is None or all(value is None for value in lesson_details.values()):
+        # Lesson not found or lesson details are not available, you can handle this case as per your requirement (e.g., redirect to an error page)
+        return render_template('lesson_not_found.html')
+
+    # Pass the lesson details to the 'individual_lesson.html' template
+    return render_template('individual_lesson.html', lesson_details=lesson_details)
+
 
 if __name__ == "__main__":
     with app.app_context():
         create_tables()
     app.run(debug=True)
-
