@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/individual_lesson.css') }}">
+</head>
+
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
+            <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
+            <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
+            <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>{{ lesson_details.lesson_title }}</h2>
+            <p>{{ lesson_details.lesson_content }}</p>
+            <p>Duration: {{ lesson_details.lesson_duration }}</p>
+            <p>Instructor: {{ lesson_details.instructor }}</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+</body>
+
+</html>
+

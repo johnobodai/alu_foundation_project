@@ -1,0 +1,22 @@
+<!-- templates/profile_settings.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Profile Settings</h2>
+    <form action="{{ url_for('auth.update_profile') }}" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ current_user.email }}" required><br>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ current_user.first_name }}" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ current_user.last_name }}" required><br>
+
+        <!-- Add other fields to update user settings -->
+
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}
+

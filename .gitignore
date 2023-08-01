@@ -1,0 +1,64 @@
+# Ignore sensitive information
+config.ini
+*.env
+
+# Ignore temporary files
+.vscode/
+.idea/
+.DS_Store
+
+# Ignore compiled or built files
+*.exe
+*.o
+*.class
+
+# Ignore log files
+*.log
+
+# Ignore local configuration files
+*.cfg
+*.conf
+
+# Ignore large binary files and media
+*.mp4
+*.avi
+*.jpg
+*.png
+
+# Ignore dependency directories
+node_modules/
+venv/
+env/
+
+# Ignore build output
+build/
+dist/
+
+# Ignore editor/IDE configuration
+.vscode/
+.idea/
+
+# Ignore operating system-specific files
+.DS_Store
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Vim temporary files
+*.swp
+*.swo
+
+# Vim backup files
+*~
+
+# Vim undo files
+*.un~
+
+# Vim session files
+Session.vim
+
+# Others
+app.py
+setup.py
+config.py

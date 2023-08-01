@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Add your head content here -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/enroll.css') }}">
+</head>
+
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
+            <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
+            <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
+            <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
+            <li>
+                <a href="#" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <!-- Add your enroll page content here -->
+            <h2>Enroll in Course</h2>
+            <p>Are you sure you want to enroll in this course?</p>
+            <!-- Access course title using course_info dictionary -->
+            <h3>{{ course_info.title }}</h3>
+            <!-- Add more course details using the course_info dictionary -->
+            <p>{{ course_info.description }}</p>
+            <p>Course Duration: {{ course_info.duration }}</p>
+            <p>Prerequisites: {{ course_info.prerequisites }}</p>
+            <form method="post">
+                <button type="submit" class="btn">Proceed to Lessons</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Add your footer content here -->
+		<p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+</body>
+
+</html>
+
