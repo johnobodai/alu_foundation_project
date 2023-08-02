@@ -14,7 +14,7 @@ header {
   text-align: left;
 }
  header h1 {
-  font-size: 30px;
+  font-size: 35px;
   margin: 0;
   flex:1;
 }
@@ -43,10 +43,11 @@ nav li {
   }
 
 nav a {
-    color: #fff;
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  flex: 1;
   }
 
 

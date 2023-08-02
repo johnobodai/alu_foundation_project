@@ -11,19 +11,23 @@
 
 <body>
     <header>
-        <h1>DigiGirls Technnovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
+    	<h1>DigiGirls Technnovation</h1>
+	<nav>
+    	<ul>
+        	<li><a href="{{ url_for('index') }}">Home</a></li>
+        	<li><a href="{{ url_for('about') }}">About Us</a></li>
+        	<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        	<li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        	{% if current_user.is_authenticated %}
+            	<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        	{% else %}
+            	<li><a href="{{ url_for('login') }}">Login</a></li>
+            	<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        	{% endif %}
+    	</ul>
+	</nav>
+</header>
 
-  <nav>
-    <ul>
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      <li><a href="{{ url_for('about') }}">About Us</a></li>
-      <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-      <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-      <!-- Add other navigation links as needed -->
-    </ul>
-  </nav>
     <section id="feedback-form" class="contact-section">
         <h2>Feedback</h2>
         <form>
