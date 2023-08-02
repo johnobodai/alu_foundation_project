@@ -12,7 +12,7 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-image: url('');
+  background-image: url('../images/bgi.jpg');
   background-size: cover;
 }
 
