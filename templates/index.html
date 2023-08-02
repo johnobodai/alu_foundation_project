@@ -17,8 +17,6 @@
     </header>-->
     <header>
         <h1>DigiGirls Technnovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
     <nav>
         <ul>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -33,7 +31,7 @@
             {% endif %}
         </ul>
     </nav>
-
+	</header>
     <main>
         {% if current_user.is_authenticated %}
             <div class="container">
@@ -43,12 +41,11 @@
         {% else %}
             <div class="container">
                 <h2>Begin your journey to become an expert programmer</h2>
-                <p>Sign up for free</p>
-                <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
-                <a href="{{ url_for('login') }}" class="btn">Login</a>
-            </div>
-        {% endif %}
-    </main>
+				<a href="{{ url_for('signup') }}" class="btn pulse">Sign Up</a>
+    			<a href="{{ url_for('login') }}" class="btn pulse">login</a>
+			</div>
+		{% endif %}
+	</main>
 
  <footer>
     <p>&copy; 2023 DigiGirls Technnovation</p>
