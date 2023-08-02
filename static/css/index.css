@@ -129,7 +129,8 @@ footer {
   padding: 10px;
   text-align: center;
   width: 100%;
-  bottom: 0px;
+  bottom: 0;
+  margin-top: auto;
   opacity: 0.9;
 }
 
