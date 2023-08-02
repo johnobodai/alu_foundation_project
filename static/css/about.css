@@ -3,7 +3,14 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #ffdddd;
+  min-height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 header {
@@ -12,6 +19,7 @@ header {
   color: #fff;
   padding: 10px 20px;
   text-align: left;
+  opacity: 0.8;
 }
  header h1 {
   font-size: 35px;
@@ -67,6 +75,7 @@ footer {
   width: 100%;
   bottom: 0;
   margin-top: auto;
+  opacity: 0.8;
 }
 
 /* Additional styles for the About Us page */
@@ -76,7 +85,7 @@ footer {
 }
 
 #about h2 {
-  color: #555;
+  color: #333;
 }
 
 #about p {

@@ -12,52 +12,52 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #ffdddd;
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensures the content fills at least the viewport height */
 }
 
 header {
-  background-color: var(--grey-color);
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
+   display: flex;
+   background-color: #333;
+   color: #fff;
+   padding: 10px 20px;
+   text-align: left;
+   opacity: 0.8;
+  }
 
-header h1 {
-  font-size: 36px;
-  margin: 0;
-}
+  header h1 {
+    font-size: 35px;
+   margin: 0;
+   flex:1;
+ }
 
-header p {
-  font-size: 18px;
-  margin: 10px 0;
-}
+  nav {
+    display:flex;
+   background-color: #333;
+    text-align: center;
+  }
 
-nav {
-  background-color: var(--dark-grey-color);
-  text-align: center;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 
 nav li {
-  flex: 1;
-}
+   flex: 1;
+  }
 
 nav a {
   color: #fff;
-  display: block;
-  padding: 10px 20px;
+  display:block;
+  padding: 5px;
   text-decoration: none;
-}
+  flex: 1;
+  }
 
 nav a:hover {
   background-color: var(--light-grey-color);
@@ -128,8 +128,17 @@ form button[type="submit"] {
   transition: background-color 0.3s;
 }
 
-form button[type="submit"]:hover {
-  background-color: var(--link-hover-color);
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #777;
 }
 
 form p {
@@ -138,11 +147,14 @@ form p {
 }
 
 footer {
-  background-color: var(--dark-grey-color);
+  background-color: #333;
   color: #fff;
   padding: 10px;
   text-align: center;
-  margin-top: auto; /* Pushes the footer to the bottom */
   width: 100%;
+  bottom: 0;
+  margin-top: auto;
+  opacity: 0.8;
 }
+
 
