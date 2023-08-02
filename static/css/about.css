@@ -7,15 +7,16 @@ body {
 }
 
 header {
-  background-color: #555;
+  display: flex;
+  background-color: #333;
   color: #fff;
-  padding: 20px;
-  text-align: center;
+  padding: 10px 20px;
+  text-align: left;
 }
-
-header h1 {
-  font-size: 36px;
+ header h1 {
+  font-size: 30px;
   margin: 0;
+  flex:1;
 }
 
 header p {
@@ -24,27 +25,30 @@ header p {
 }
 
 nav {
+  display:flex;
   background-color: #333;
+  text-align: center;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 
 nav li {
-  flex: 1;
-}
+   flex: 1;
+  }
 
 nav a {
-  color: #fff;
-  display: block;
-  padding: 10px 20px;
-  text-decoration: none;
-  text-align: center;
-}
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+
 
 nav a:hover {
   background-color: #777;
