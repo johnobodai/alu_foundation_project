@@ -1,24 +1,25 @@
-<!-- templates/course_details.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ course_details[0] }}</title>
+</head>
+<body>
+    <!-- Add the following debug output -->
+    <h1>Debug Output</h1>
+    <pre>{{ course_details }}</pre>
 
-{% extends 'base.html' %}
+    <!-- Rest of your template content -->
+    <h1>{{ course_details[0] }}</h1>
+    <img src="{{ course_details[1] }}" alt="{{ course_details[0] }} Image">
+    <p>{{ course_details[2] }}</p>
+    <p>Duration: {{ course_details[3] }}</p>
+    <p>Prerequisites: {{ course_details[4] }}</p>
 
-{% block content %}
-    <h2>{{ course.title }}</h2>
-    <p>{{ course.description }}</p>
-    <h3>Lessons:</h3>
     <ul>
-        {% for lesson in course.lessons %}
-            <li>
-                {% if current_user.is_authenticated %}
-                    {% if lesson in current_user.completed_lessons %}
-                        <span style="color: green;">✔</span> 
-                    {% else %}
-                        <span style="color: red;">✖</span> 
-                    {% endif %}
-                {% endif %}
-                {{ lesson.title }}
-            </li>
-        {% endfor %}
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=1) }}">Lesson 1: {{ course_details[5] }}</a></li>
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=2) }}">Lesson 2: {{ course_details[8] }}</a></li>
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=3) }}">Lesson 3: {{ course_details[11] }}</a></li>
     </ul>
-{% endblock %}
+</body>
+</html>
 

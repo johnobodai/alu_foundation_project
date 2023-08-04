@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/enroll.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/enroll.css') }}">
 </head>
 
 <body>
@@ -28,20 +28,21 @@
             <h2>Enroll in Course</h2>
             <p>Are you sure you want to enroll in this course?</p>
             <!-- Access course title using course_info dictionary -->
-            <h3>{{ course_info.title }}</h3>
+            <h3>{{ course_info.course_name }}</h3>
             <!-- Add more course details using the course_info dictionary -->
-            <p>{{ course_info.description }}</p>
-            <p>Course Duration: {{ course_info.duration }}</p>
+            <p>{{ course_info.course_description }}</p>
+            <p>Course Duration: {{ course_info.course_duration }}</p>
             <p>Prerequisites: {{ course_info.prerequisites }}</p>
-            <form method="post">
-                <button type="submit" class="btn">Proceed to Lessons</button>
+            <form method="post" action="{{ url_for('course_details', course_id=course_id) }}">
+
+			<button type="submit" class="btn">Proceed to Course Details</button>
             </form>
         </section>
     </main>
 
     <footer>
         <!-- Add your footer content here -->
-		<p>&copy; 2023 DigiGirls Technnovation</p>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
     </footer>
 </body>
 
