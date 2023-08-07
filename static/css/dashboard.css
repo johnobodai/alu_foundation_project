@@ -12,12 +12,12 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #ffdddd;
 }
 
 /* Navigation bar styles */
 nav {
-  background-color: #333;
+  background-color: #555;
   width: 60px; /* Adjust the width as needed */
   height: 100vh; /* Take the full height of the viewport */
   position: fixed; /* Fixed position to keep the navigation always visible */
@@ -68,7 +68,7 @@ main {
 
 /* Footer styles */
 footer {
-  background-color: #333;
+  background-color: #555;
   color: #fff;
   padding: 10px;
   text-align: center;
