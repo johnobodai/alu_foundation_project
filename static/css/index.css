@@ -7,7 +7,7 @@
     --dark-grey-color: #333;
     --link-hover-color: #0056b3;
   }
-  
+
   body {
 	font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -15,9 +15,10 @@
     margin: 0;
     padding: 0;
     flex-direction: column;
+	justify-content: center;
     background-image: url('../images/bgi.jpeg');
     background-size: cover;
-  
+
   }
 
 .background-container::before {
@@ -75,6 +76,7 @@
   }
   
   main {
+	display: flex;
 	max-width: 100%;
 	flex: 1;
     padding: 20px;
@@ -82,9 +84,10 @@
 	justify-content: center;
 }
   .container {
+	text-align: center;
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 100px;
     justify-content: center;
   }
   .container h2 {
