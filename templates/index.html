@@ -11,10 +11,7 @@
     <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-    <!--<header>
-        <div class="logo"><a href="#">DigiGirls Technnovation</a></div>
-        <sub>Learn Coding From Scratch</sub>
-    </header>-->
+    <div class="background-container">
     <header>
         <h1>DigiGirls Technnovation</h1>
     <nav>
@@ -37,15 +34,15 @@
             <div class="container">
                 <h2>Welcome, {{ current_user.email }}!</h2>
                 <p>Thank you for being part of DigiGirls Technnovation. You can now explore our courses and start learning.</p>
-            </div>
+			</div>
         {% else %}
             <div class="container">
                 <h2>Begin your journey to become an expert programmer</h2>
-			<div class="pcontainer">
-				<p>DigiGirls Technnovation is a groundbreaking and transformative educational platform tailored to empower and uplift young girls  in the technology industry. It pioneers a progressive approach to bridge the gender gap and foster a diverse and inclusive tech community. </p>
-			</div>
-				<a href="{{ url_for('signup') }}" class="btn pulse">Sign Up</a>
-    			<a href="{{ url_for('login') }}" class="btn pulse">login</a>
+				<div class="pcontainer">
+					<p>DigiGirls Technnovation is a groundbreaking and transformative educational platform tailored to empower and uplift young girls  in the technology industry. It pioneers a progressive approach to bridge the gender gap and foster a diverse and inclusive tech community. </p>
+				</div>
+					<a href="{{ url_for('signup') }}" class="btn pulse">Sign Up</a>
+    				<a href="{{ url_for('login') }}" class="btn pulse">login</a>
 			</div>
 		{% endif %}
 	</main>
@@ -53,6 +50,7 @@
 	<footer>
     	<p>&copy; 2023 DigiGirls Technnovation</p>
 	</footer>
+	</div>
 </body>
 
 </html>
