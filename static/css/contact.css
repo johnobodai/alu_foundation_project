@@ -1,0 +1,137 @@
+/* Reset default margins and paddings */
+body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffdddd;
+}
+
+header {
+   display: flex;
+   background-color: #333;
+   color: #fff;
+   padding: 10px 20px;
+   text-align: left;
+   opacity: 0.8;
+}
+
+  header h1 {
+    font-size: 35px;
+   margin: 0;
+   flex:1;
+ }
+
+  nav {
+    display:flex;
+   background-color: #333;
+    text-align: center;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+nav li {
+   flex: 1;
+  }
+
+nav a {
+    color: #fff;
+   display:block;
+   padding: 5px;
+   text-decoration: none;
+    flex: 1;
+}
+
+
+main {
+    padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.8;
+}
+
+/* Contact page styles */
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #555;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.contact-form, .feedback-form {
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #777;
+}
+

@@ -1,148 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiGirls Technnovation - Login</title>
-	<link rel="stylesheet" href="../static/css/dashboard-style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Your Web Application</title>
+  <!-- Link to your custom CSS file for the Dashboard page -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+
 </head>
 
 <body>
-    <header>
-        <h1>DIgiGirls Technovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
+      <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
+      <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
+      <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
+	  <li>
+  <a href="{ url_for('index')}" onclick="logout()" title="Logout">
+    <i class="fas fa-sign-out-alt"></i>
+  </a>
+</li>
 
-    <nav>
+    </ul>
+  </nav>  <main>
+    {% if 'user_id' in session %}
+      <h2>Welcome to Your Dashboard, {{ current_user.email }}!</h2>
+      <p>Here you can view your progress, enrolled courses, and more.</p>
+      <h4>Enrolled Courses:</h4>
+      {% if current_user.courses %}
         <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('courses') }}">Courses</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+          {% for course in current_user.courses %}
+            <li>{{ course.name }}</li>
+          {% endfor %}
         </ul>
-    </nav>
-    
-    <main>
-        <section id="courses" class="course-grid">
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Introduction to HTML and CSS</h4>
-                <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
-                <ul>
-                    <li>Course Duration: 4 weeks</li>
-                    <li>Prerequisites: None</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
+      {% else %}
+        <p>No courses enrolled yet.</p>
+      {% endif %}
 
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>JavaScript Fundamentals</h4>
-                <p>Master the fundamentals of JavaScript to add interactivity to your web pages.</p>
-                <ul>
-                    <li>Course Duration: 6 weeks</li>
-                    <li>Prerequisites: Basic knowledge of HTML/CSS</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
+      <h4>Completed Lessons:</h4>
+      {% if current_user.completed_lessons %}
+        <ul>
+          {% for lesson in current_user.completed_lessons %}
+            <li>{{ lesson.title }} (Course: {{ lesson.course.name }})</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No lessons completed yet.</p>
+      {% endif %}
 
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Python for Beginners</h4>
-                <p>Learn Python programming language from scratch and build simple applications.</p>
-                <ul>
-                    <li>Course Duration: 8 weeks</li>
-                    <li>Prerequisites: None</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
+      <h4>Progress:</h4>
+      <p>{{ current_user.progress }}% completed</p>
 
-            <!-- Add more course cards here -->
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Front-End Web Development</h4>
-                <p>Learn the essentials of front-end web development and create responsive websites.</p>
-                <ul>
-                    <li>Course Duration: 10 weeks</li>
-                    <li>Prerequisites: HTML, CSS, JavaScript</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
+      <!-- Add other personalized dashboard content here -->
 
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Data Science with R</h4>
-                <p>Explore data science concepts using R programming language and statistical analysis.</p>
-                <ul>
-                    <li>Course Duration: 12 weeks</li>
-                    <li>Prerequisites: Basic programming knowledge</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Back-End Development with Node.js</h4>
-                <p>Learn back-end web development using Node.js, Express, and MongoDB.</p>
-                <ul>
-                    <li>Course Duration: 8 weeks</li>
-                    <li>Prerequisites: JavaScript, HTML, CSS</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Mobile App Development with React Native</h4>
-                <p>Build cross-platform mobile apps with React Native framework.</p>
-                <ul>
-                    <li>Course Duration: 10 weeks</li>
-                    <li>Prerequisites: JavaScript, React.js</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Machine Learning Essentials</h4>
-                <p>Discover the basics of machine learning and its applications in real-world scenarios.</p>
-                <ul>
-                    <li>Course Duration: 12 weeks</li>
-                    <li>Prerequisites: Python, Data Analysis</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Cybersecurity Fundamentals</h4>
-                <p>Learn about cybersecurity threats, practices, and how to secure digital assets.</p>
-                <ul>
-                    <li>Course Duration: 8 weeks</li>
-                    <li>Prerequisites: Basic computer knowledge</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-
-            <div class="course-card">
-                <img src="path-to-course-image.jpg" alt="Course Image">
-                <h4>Artificial Intelligence Basics</h4>
-                <p>Explore the world of artificial intelligence and its impact on various industries.</p>
-                <ul>
-                    <li>Course Duration: 10 weeks</li>
-                    <li>Prerequisites: Python, Mathematics</li>
-                </ul>
-                <button>Start Course</button>
-            </div>
-        </section>
-    </main>
-
-	<footer>
-        <p>&copy; 2023 DigiGirls Technnovation</p>
-    </footer>
-
+    {% else %}
+      <p>You need to <a href="{{ url_for('login') }}">log in</a> or <a href="{{ url_for('signup') }}">sign up</a> to access your dashboard.</p>
+    {% endif %}
+  </main>
 </body>
 
-</html>
+<footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+</footer>
 
+
+</html>

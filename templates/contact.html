@@ -1,35 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>DigiGirls Technnovation</title>
-     <link rel="stylesheet" href="../static/css/style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiGirls Technnovation - Contact</title>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+    <!-- Link to Font Awesome CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.4.0-web/css/all.min.css') }}">
 </head>
 
 <body>
     <header>
-        <h1>DIgiGirls Technovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
+    	<h1>DigiGirls Technnovation</h1>
+	<nav>
+    	<ul>
+        	<li><a href="{{ url_for('index') }}">Home</a></li>
+        	<li><a href="{{ url_for('about') }}">About Us</a></li>
+        	<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        	<li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        	{% if current_user.is_authenticated %}
+            	<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        	{% else %}
+            	<li><a href="{{ url_for('login') }}">Login</a></li>
+            	<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        	{% endif %}
+    	</ul>
+	</nav>
+</header>
 
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('courses') }}">Courses</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <section id="contact-info" class="contact-section">
-            <h2>Contact Information</h2>
-            <p>Email: contact@example.com</p>
-            <p>Phone: +1 234 567 890</p>
-            <p>Address: 123 Main Street, City, Country</p>
+    <section id="feedback-form" class="contact-section">
+        <h2>Feedback</h2>
+        <form>
+            <!-- Feedback form fields here -->
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
 
             <div class="social-links">
                 <a href="https://www.facebook.com/example" target="_blank" rel="noopener noreferrer">
@@ -58,37 +65,17 @@
                 <!-- Contact form fields here -->
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-                
                 <button type="submit">Send Message</button>
             </form>
         </section>
 
-        <section id="feedback-form" class="contact-section">
-            <h2>Feedback</h2>
-            <form>
-                <!-- Feedback form fields here -->
-                <label for="feedback">Your Feedback:</label>
-                <textarea id="feedback" name="feedback" required></textarea>
-                
-                <button type="submit">Submit Feedback</button>
-            </form>
         </section>
 
-        <section id="faq" class="contact-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>How do I reset my password?</h3>
-                <p>Instructions on how to reset your password can be found on the login page.</p>
-            </div>
-            <!-- Add more FAQ items here -->
-        </section>
-    </main>
+   </main>
 
     <footer>
         <p>&copy; 2023 DigiGirls Technnovation</p>

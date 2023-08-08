@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #ffdddd;
+  min-height: 100%;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: left;
+  opacity: 0.8;
+}
+ header h1 {
+  font-size: 35px;
+  margin: 0;
+  flex:1;
+}
+
+header p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+nav {
+  display:flex;
+  background-color: #333;
+  text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+nav li {
+   flex: 1;
+  }
+
+nav a {
+  color: #fff;
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+  flex: 1;
+  }
+
+
+nav a:hover {
+  background-color: #777;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.8;
+}
+
+/* Additional styles for the About Us page */
+#about {
+  text-align: center;
+  padding: 20px;
+}
+
+#about h2 {
+  color: #333;
+}
+
+#about p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.team-member {
+  display: inline-block;
+  margin: 20px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.team-member h4 {
+  margin: 0;
+}
+
+.team-member p {
+  color: #555;
+  margin: 0;
+}
+

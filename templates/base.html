@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiGirls Technnovation</title>
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- Link to Font Awesome CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.4.0-web/css/all.min.css') }}">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <header>
+        <h1>DigiGirls Technnovation</h1>
+        <p>Learn coding from scratch</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            <li><a href="{{ url_for('faq') }}">FAQ</a></li>
+            {% if current_user.is_authenticated %}
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+        {% if current_user.is_authenticated %}
+            <div class="container">
+                <h2>Welcome, {{ current_user.email }}!</h2>
+                <p>Thank you for being part of DigiGirls Technnovation. You can now explore our courses and start learning.</p>
+            </div>
+        {% else %}
+            <div class="container">
+                <h2>Begin your journey to become an expert programmer</h2>
+                <p>Sign up for free</p>
+                <a href="{{ url_for('signup') }}" class="btn">Sign Up</a>
+                <a href="{{ url_for('login') }}" class="btn">Login</a>
+            </div>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; 2023 DigiGirls Technnovation</p>
+    </footer>
+
+</body>
+
+</html>
+

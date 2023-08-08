@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ lesson_details.course_name }} - {{ lesson_details.title }}</title>
+</head>
+<body>
+    <h1>{{ lesson_details.course_name }} - {{ lesson_details.title }}</h1>
+    <p>{{ lesson_details.content }}</p>
+    <p>Duration: {{ lesson_details.duration }}</p>
+    <p>Instructor: {{ lesson_details.instructor }}</p>
+
+    <!-- Display associated resources (if any) -->
+    <ul>
+        {% for resource in resources %}
+        <li><a href="{{ resource.resource_url }}">{{ resource.resource_name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add a link to go back to the course details page -->
+    <p><a href="{{ url_for('course_details', course_id=course_details.id) }}">Back to Course Details</a></p>
+</body>
+</html>
+

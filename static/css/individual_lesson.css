@@ -1,0 +1,98 @@
+/* Reset some default styles for better consistency */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+/* Navigation bar styles */
+nav {
+  background-color: #333;
+  width: 60px; /* Adjust the width as needed */
+  height: 100vh; /* Take the full height of the viewport */
+  position: fixed; /* Fixed position to keep the navigation always visible */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
+}
+
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list a {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #777; /* Slightly lighter gray on hover */
+}
+
+/* Logout link styles */
+.logout-link {
+  margin-top: auto; /* Push the logout link to the bottom of the navigation column */
+}
+
+/* Main content styles */
+main {
+  margin-left: 80px; /* To avoid content being hidden under the navigation bar */
+  padding: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Additional styles for header (you can modify it as per your requirement) */
+header {
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styles for the welcome message in the main content (you can modify it as per your requirement) */
+main h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+main p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
