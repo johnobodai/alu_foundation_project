@@ -1,4 +1,4 @@
-// JavaScript code to handle form submission and redirection after login
+/ JavaScript code to handle form submission and redirection after login
 
 const loginForm = document.querySelector('form');
 
