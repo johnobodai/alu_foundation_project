@@ -10,7 +10,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Make sure the body takes at least the full viewport height */
+  min-height: 100vh;
   background-color: #ffdddd;
   justify-content: center;
 }
@@ -58,13 +58,12 @@ nav {
 
 /* Main content styles */
 main {
-  flex: 1; /* Let the main content take all the available vertical space */
+  flex: 1;
   margin-left: 110px;
   padding: 20px;
-  /* Add some space between the main content and footer */
   margin-bottom: 70px;
   display: flex;
-  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -79,45 +78,36 @@ footer {
 }
 
 /* Course category styles */
-
 .category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Display 2 columns */
-  gap: 20px; /* Gap between items */
-  margin-bottom: 30px;
-}
-
-#course-categories {
-  flex: 2;
-  display:flex ;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  margin: 20px 0;
 }
 
-#course-categories .category {
-  flex-basis: calc(50% - 20px); /* Each category takes equal space in a column */
-  margin-bottom: 30px;
-  align-items: center;
-  width: 450px;
-  justify-content: center;
+.category {
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-
-#course-categories h3 {
-  font-size: 30px;
+.category h3 {
+  font-size: 24px;
   margin-bottom: 10px;
   text-align: center;
 }
 
 /* Course card styles */
 .course-card {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 15px;
-  width: 100%;
-  max-width: 600px;
-
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .course-card img {
@@ -127,19 +117,17 @@ footer {
 }
 
 .content {
-  justify-content:center;
-  margin: 20px;
+  text-align: center;
 }
 
 .content h4 {
   font-size: 18px;
   margin-bottom: 10px;
-  text-align: center;
 }
 
 .content p {
   font-size: 14px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
 
 .content ul {
@@ -148,31 +136,34 @@ footer {
 }
 
 .content li {
-  text-align: center;
+  margin-bottom: 5px;
 }
 
 .btn {
   background-color: #ffdddd;
-  color: #fff;
+  color: #333;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .btn a {
   text-decoration: none;
   color: #333;
 }
-.btn :hover {
+
+.btn:hover {
   background-color: #777;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .category-grid {
-	grid-template-columns: 1fr; /* Display 1 column on smaller screens */
+  .category {
+    width: 100%;
   }
-i}
+}
+
