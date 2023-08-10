@@ -32,9 +32,8 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
   padding-top: 20px;
-  margin-top: auto;
+  margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
 }
 
 .nav-list li {
@@ -54,6 +53,11 @@ nav {
 
 .nav-list a:hover {
   background-color: #777; /* Slightly lighter gray on hover */
+}
+
+/* Logout link styles */
+.logout-link {
+  margin-top: auto; /* Push the logout link to the bottom of the navigation column */
 }
 
 /* Main content styles */
@@ -82,7 +86,7 @@ header {
 }
 
 /* Styles for the welcome message in the main content (you can modify it as per your requirement) */
-main h1 {
+main h2 {
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -92,41 +96,18 @@ main p {
   margin-bottom: 20px;
 }
 
-/* Styles for the user details in the main content (you can modify it as per your requirement) */
-main p {
-  font-size: 16px;
+/* Styles for the enrolled courses and completed lessons lists (you can modify it as per your requirement) */
+main h4 {
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
-/* Styles for the Edit Profile link (you can modify it as per your requirement) */
-main a {
-  color: #007bff;
-  text-decoration: underline;
-  cursor: pointer;
-  transition: color 0.3s ease;
+main ul {
+  margin-left: 20px;
 }
 
-main a:hover {
-  color: #0056b3;
-}
-
-/* Styles for the Back to Dashboard button (you can modify it as per your requirement) */
-main form {
-  margin-top: 20px;
-}
-
-main button {
-  background-color: #555; /* Change to the desired color for the Back to Dashboard button */
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+main li {
   font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-main button:hover {
-  background-color: #999; /* Change to the desired hover color for the Back to Dashboard button */
+  margin-bottom: 5px;
 }
 

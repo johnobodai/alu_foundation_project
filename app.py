@@ -229,6 +229,10 @@ def courses():
     # Render the 'courses.html' template for the Courses page
     return render_template('courses.html')
 
+@app.route('/mentorship')
+def mentorship():
+    # Render the 'mentorship.html' template for the Mentorship Program page
+    return render_template('mentorship.html')
 
 @app.route('/logout', methods=['POST'])
 def logout():
