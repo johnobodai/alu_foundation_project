@@ -22,18 +22,33 @@
 <section id="course-categories">
   <!-- Web Development -->
   <div class="category">
-	<h3>Web Development</h3>
+	<h3>HTML Basics</h3>
 	<div class="course-card">
 	  <img src="../static/images/html&css.png" alt="Course Image"> <br>
 	  <div class="content"> 
-	  <h4>Introduction to HTML and CSS</h4>
-	  <p>Learn the basics of HTML and CSS to create simple and beautiful web pages.</p>
+	  <h4>Introduction to HTML</h4>
+	  <p>Learn the basics of HTML and use it to create the outline of a sample page.</p>
 	  <ul>
 		<li>Course Duration: 4 weeks</li>
 		<li>Prerequisites: None</li>
 	  </ul>
 	  </div>
 	  <button class="btn"><a href="{{ url_for('enroll', course_id=1) }}" class="btn">Enroll Now</a></button>
+	</div>
+
+
+	<div class="course-card">
+		<img src="../static/images/fend.jpg" alt="Course Image"> <br>
+		<div class="content">
+		<h4>CSS Fundamentals</h4>
+		<p>Learn the basics of CSS and use it to beautify the webpage earlier created with HTML.</p>
+		<ul>
+		  <li>Course Duration: 5 weeks</li>
+		  <li>Prerequisites: HTML</li>
+		</ul>
+		</div>
+		<button class="btn"><a href="{{ url_for('enroll', course_id=3) }}" class="btn">Enroll Now</a></button>
+	  </div>
 	</div>
 
 	<div class="course-card">
@@ -52,18 +67,18 @@
 	<div class="course-card">
 	  <img src="../static/images/fend.jpg" alt="Course Image"> <br>
 	  <div class="content">
-	  <h4>Front-End Web Development</h4>
-	  <p>Learn the essentials of front-end web development and create responsive websites.</p>
+	  <h4>Python</h4>
+	  <p>Learn the essentials of the Python Programming language.</p>
 	  <ul>
 		<li>Course Duration: 10 weeks</li>
-		<li>Prerequisites: HTML, CSS, JavaScript</li>
+		<li>Prerequisites: None</li>
 	  </ul>
 	  </div>
 	  <button class="btn"><a href="{{ url_for('enroll', course_id=3) }}" class="btn">Enroll Now</a></button>
 	</div>
   </div>
 
-  <!-- Data Science -->
+  <!-- Data Science 
   <div class="category">
 	<h3>Data Science</h3>
 	<div class="course-card">
@@ -106,7 +121,7 @@
 	  </div>
   </div>
 
-  <!-- Mobile App Development -->
+   Mobile App Development 
   <div class="category">
 	<h3>Mobile App Development</h3>
 	<div class="course-card">
@@ -149,7 +164,7 @@
 	  </div>
   </div>
 
-  <!-- Add more categories and course cards as needed -->
+  Add more categories and course cards as needed -->
 
 </section>
 </main>
