@@ -68,15 +68,18 @@ main {
 }
 
 footer {
-  background-color: #333;
+  display: block;
+  background-color: #555;
   color: #fff;
   padding: 10px;
   text-align: center;
   width: 100%;
-  position: absolute;
+  margin: 0;
   bottom: 0;
-  opacity: 0.8;
+  position: fixed;
+
 }
+
 
 /* Additional styles for the About Us page */
 #about {

@@ -234,6 +234,16 @@ def mentorship():
     # Render the 'mentorship.html' template for the Mentorship Program page
     return render_template('mentorship.html')
 
+@app.route('/awareness')
+def awareness():
+    # Render the 'awareness.html' template for the Outreach and Awareness Campaign
+    return render_template('awareness.html')
+
+@app.route('/hackathon')
+def hackathon():
+    # Render the 'mentorship.html' template for the Mentorship Program page
+    return render_template('hackathon.html')
+
 @app.route('/logout', methods=['POST'])
 def logout():
     # Clear the user's session to log them out

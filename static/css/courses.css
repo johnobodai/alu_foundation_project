@@ -12,6 +12,7 @@ body {
   flex-direction: column;
   min-height: 100vh; /* Make sure the body takes at least the full viewport height */
   background-color: #ffdddd;
+  justify-content: center;
 }
 
 /* Navigation bar styles */
@@ -58,7 +59,7 @@ nav {
 /* Main content styles */
 main {
   flex: 1; /* Let the main content take all the available vertical space */
-  margin-left: 80px;
+  margin-left: 110px;
   padding: 20px;
   /* Add some space between the main content and footer */
   margin-bottom: 70px;
@@ -78,20 +79,28 @@ footer {
 }
 
 /* Course category styles */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Display 2 columns */
+  gap: 20px; /* Gap between items */
+  margin-bottom: 30px;
+}
+
 #course-categories {
   flex: 2;
   display:flex ;
-  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
   justify-content: space-between;
 }
 
 #course-categories .category {
-  flex-basis: calc(33.33% - 20px); /* Each category takes equal space in a column */
+  flex-basis: calc(50% - 20px); /* Each category takes equal space in a column */
   margin-bottom: 30px;
   align-items: center;
   width: 450px;
   justify-content: center;
 }
+
 
 #course-categories h3 {
   font-size: 30px;
@@ -106,19 +115,20 @@ footer {
   border-radius: 4px;
   padding: 20px;
   margin-bottom: 15px;
-  width: 450px;
-  height: 55vh;
+  width: 100%;
+  max-width: 600px;
 
 }
 
 .course-card img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  margin-bottom: 10px;
 }
 
 .content {
   justify-content:center;
-  margin: 25px;
+  margin: 20px;
 }
 
 .content h4 {
@@ -161,3 +171,8 @@ footer {
   background-color: #777;
 }
 
+@media (max-width: 768px) {
+  .category-grid {
+	grid-template-columns: 1fr; /* Display 1 column on smaller screens */
+  }
+i}
