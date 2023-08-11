@@ -55,6 +55,22 @@ nav {
   background-color: #777; /* Slightly lighter gray on hover */
 }
 
+.nav-title {
+  display: none;
+}
+
+/* Display titles when screen width is greater than or equal to 600px */
+  @media (min-width: 600px) {
+    .nav-list li a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-title {
+      display: block;
+    }
+
 /* Logout link styles */
 .logout-link {
   margin-top: auto; /* Push the logout link to the bottom of the navigation column */
