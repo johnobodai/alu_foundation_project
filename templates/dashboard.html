@@ -1,43 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Your Web Application</title>
-  <!-- Link to your custom CSS file for the Dashboard page -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses - Your Web Application</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-  <nav>
-    <ul class="nav-list">
-      <li>
-        <button id="toggleSidebar" title="Toggle Sidebar"><i class="fas fa-bars"></i></button>
-      </li>
-    </ul>
-  </nav>
+<nav>
+<ul class="nav-list">
+  <li><a href="{{ url_for('dashboard') }}"><i class="fas fa-home"></i></a></li>
+  <li><a href="{{ url_for('courses') }}"><i class="fas fa-book"></i></a></li>
+  <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-globe"></i></a></li>
+  <li><a href="{{ url_for('awareness')}}" title="Outreach and Awareness"><i class="fas fa-hashtag"></i></a></li>
+  <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i></a></li>
+  <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
+  <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
+  <li><a href="{{ url_for('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+</ul>
+</nav>
 
-  <!-- Sidebar -->
-  <aside id="sidebar" class="active">
-    <ul class="sidebar-list">
-      <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
-      <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
-      <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-globe"></i></a></li>
-      <li><a href="{{ url_for('awareness')}}" title="Outreach and Awareness"><i class="fas fa-hashtag"></i></a></li>
-      <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i></a></li>
-      <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
-      <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
-      <li><a href="{{ url_for ('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
-    </ul>
-  </aside>
-
-  <main>
-    {% if 'user_id' in session %}
-      <h2>Welcome to Your Dashboard, {{ current_user.first_name}}!</h2>
-      <p>Here you can view your progress, enrolled courses, and more.</p>
-      <h4>Enrolled Courses:</h4>
-      {% if current_user.courses %}
+<main>
+  {% if 'user_id' in session %}
+    <h2>Welcome to Your Dashboard, {{ current_user.first_name}}!</h2>
+    <p>Here you can view your progress, enrolled courses, and more.</p>
+    <h4>Enrolled Courses:</h4>
+    {% if current_user.courses %}
         <ul>
           {% for course in current_user.courses %}
             <li>{{ course.name }}</li>
@@ -67,19 +58,12 @@
       <p>You need to <a href="{{ url_for('login') }}">log in</a> or <a href="{{ url_for('signup') }}">sign up</a> to access your dashboard.</p>
     {% endif %}
   </main>
-
-  <footer>
-    <p>&copy; 2023 DigiGirls Technnovation</p>
-  </footer>
-
-  <script>
-    const toggleSidebarButton = document.getElementById('toggleSidebar');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleSidebarButton.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-  </script>
 </body>
+
+<footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+</footer>
+
+
 </html>
 
