@@ -27,22 +27,32 @@ nav {
   flex-direction: column;
   align-items: center;
 }
-.nav-list {
+
+#toggleSidebar {
+      color: #fff;
+      background-color: #555;
+      border: none;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+.sidebar-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-left: 10px;
   padding-top: 20px;
   margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
 }
 
-.nav-list li {
+.sidebar-list li {
   margin-bottom: 20px;
 }
 
-.nav-list a {
+.sidebar-list a {
   color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
@@ -50,12 +60,10 @@ nav {
   transition: background-color 0.3s ease;
 }
 
-.nav-list a:hover {
+.sidebar-list a:hover {
   background-color: #777; /* Slightly lighter gray on hover */
 }
-.nav-title {
-  display: none;
-}
+
 
 /* Display titles when screen width is greater than or equal to 600px */
 @media (min-width: 600px) {
