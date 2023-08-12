@@ -148,8 +148,8 @@ def signup():
         # Redirect to the login page after successful registration
         return redirect(url_for('login'))
 
-    # Render the 'signup.html' template for GET requests (displaying the registration form)
-    return render_template('signup')
+    # Render the 'register.html' template for GET requests (displaying the registration form)
+    return render_template('register')
 
 
 @app.route('/login', methods=['GET', 'POST'])
