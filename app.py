@@ -119,8 +119,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
     if request.method == 'POST':
         # Process the registration form data when it's submitted
         title = request.form['title']
@@ -136,7 +136,7 @@ def register():
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
         # Insert the new user data into the 'users' table in the database
-        conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+        conn = pymysql.connect(host='localhost', user='j0hn', password='w14gs005.asdfghjkl', db='digigirls_db')
         cursor = conn.cursor()
         cursor.execute('''
             INSERT INTO users (title, first_name, last_name, age, gender, country, email, password)
@@ -149,7 +149,7 @@ def register():
         return redirect(url_for('login'))
 
     # Render the 'register.html' template for GET requests (displaying the registration form)
-    return render_template('register')
+    return render_template('signup.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -250,12 +250,6 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    if request.method == 'POST':
-        return redirect(url_for('dashboard'))
-    return render_template('signup.html')  # Replace 'signup.html' with the actual template for signup page
 
 
 @app.route('/profile')
