@@ -37,7 +37,15 @@
             <form method="post" action="{{ url_for('course_details', course_id=course_id) }}">
 
 			<button type="submit" class="btn">Proceed to Course Details</button>
+	    </form><br>
+
+	    <h2> OR </h2>
+
+	    <form action="{{ url_for('courses')}}">
+
+                        <button type="submit" class="btn">Go back to Courses Page</button>
             </form>
+
         </section>
     </main>
 
