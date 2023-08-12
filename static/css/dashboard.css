@@ -18,9 +18,9 @@ body {
 /* Navigation bar styles */
 nav {
   background-color: #555;
-  width: 60px; /* Adjust the width as needed */
-  height: 100vh; /* Take the full height of the viewport */
-  position: fixed; /* Fixed position to keep the navigation always visible */
+  width: 60px;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -28,22 +28,13 @@ nav {
   align-items: center;
 }
 
-#toggleSidebar {
-      color: #fff;
-      background-color: #555;
-      border: none;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
 .nav-list {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
+  align-items: center;
+  height: 100%;
   padding-top: 20px;
-  margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
+  margin-top: auto;
 }
 
 .nav-list li {
@@ -53,6 +44,7 @@ nav {
 .nav-list a {
   color: #fff;
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 40px;
   height: 40px;
@@ -61,10 +53,8 @@ nav {
 }
 
 .nav-list a:hover {
-  background-color: #777; /* Slightly lighter gray on hover */
+  background-color: #777;
 }
-
-
 /* Display titles when screen width is greater than or equal to 600px */
 @media (min-width: 600px) {
   .nav-list li a {
