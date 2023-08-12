@@ -119,8 +119,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
+@app.route('/register', methods=['GET', 'POST'])
+def register():
     if request.method == 'POST':
         # Process the registration form data when it's submitted
         title = request.form['title']
