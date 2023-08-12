@@ -29,61 +29,16 @@ nav {
 }
 
 #toggleSidebar {
-      color: #fff;
-      background-color: #555;
-      border: none;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-.sidebar-list {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  padding-top: 20px;
-  margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
-}
-
-.sidebar-list li {
-  margin-bottom: 20px;
-}
-
-.sidebar-list a {
   color: #fff;
-  display: flex;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
+  background-color: #555;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.sidebar-list a:hover {
-  background-color: #777; /* Slightly lighter gray on hover */
-}
-
-
-/* Display titles when screen width is greater than or equal to 600px */
-@media (min-width: 600px) {
-  .nav-list li a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-title {
-  display: block;
-}
-}
-
-/* Logout link styles */
-.logout-link {
-  margin-top: auto; /* Push the logout link to the bottom of the navigation column */
-}
-/* Additional styles for the sidebar */
-
+/* Sidebar styles */
 #sidebar {
   width: 250px;
   background-color: #333;
@@ -100,8 +55,33 @@ nav {
   left: 0; /* Show the sidebar by moving it into the viewport */
 }
 
-/* Main content styles */
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  padding-top: 20px;
+  margin-bottom: auto; /* Set margin-bottom to auto to push the logout link to the bottom */
+}
 
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+  background-color: #777; /* Slightly lighter gray on hover */
+}
+
+/* Main content styles */
 main {
   margin-left: 80px; /* To avoid content being hidden under the navigation bar */
   padding: 20px;
@@ -118,7 +98,7 @@ footer {
   bottom: 0;
 }
 
-/* Additional styles for header (you can modify it as per your requirement) */
+/* Additional styles for header */
 header {
   background-color: #555;
   color: #fff;
@@ -126,7 +106,7 @@ header {
   padding: 20px;
 }
 
-/* Styles for the welcome message in the main content (you can modify it as per your requirement) */
+/* Styles for the welcome message in the main content */
 main h2 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -137,7 +117,7 @@ main p {
   margin-bottom: 20px;
 }
 
-/* Styles for the enrolled courses and completed lessons lists (you can modify it as per your requirement) */
+/* Styles for the enrolled courses and completed lessons lists */
 main h4 {
   font-size: 18px;
   margin-bottom: 10px;
