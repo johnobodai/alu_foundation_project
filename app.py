@@ -487,7 +487,7 @@ def course_details(course_id):
     return render_template('course_details.html', course_details=course_details, course_id=course_id)
 
 
-@app.route('/lesson/<int:course_id>/lesson_<int:lesson_number>')
+@app.route('/individual_lesson/<int:course_id>/lesson_<int:lesson_number>')
 def individual_lesson(course_id, lesson_number):
     conn = get_db()
     cursor = conn.cursor()
@@ -533,7 +533,7 @@ def individual_lesson(course_id, lesson_number):
     cursor.execute(resources_query, (course_id,))
     resources = cursor.fetchall()
 
-    return render_template('individual_lesson.html', lesson_details=lesson_details_dict, resources=resources)
+    return render_template('individual_lesson.html', lesson_details=lesson_details_dict, resources=resources, course_details=course_details)
 
 
 
