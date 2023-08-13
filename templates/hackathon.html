@@ -13,18 +13,19 @@
 
 <body>
   <nav>
-    <ul class="nav-list">
-      <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i></a></li>
-      <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i></a></li>
-      <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-handshake-angle"></i></a></li>
-  <li><a href="{{ url_for('awareness')}}" title="Outreach and Awareness"><i class="fas fa-hand-holding-heart"></i></a></li>
-      <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i></a></li>
-      <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i></a></li>
-      <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i></a></li>
-      <li><a href="{{ url_for('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
-
-    </ul>
-  </nav>  <main>
+<ul class="nav-list">
+  <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+  <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i>Courses</a></li>
+  <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-handshake-angle"></i>Mentorship</a></li>
+  <li><a href="{{ url_for('awareness')}}" title="Outreach and Awareness"><i class="fas fa-hand-holding-heart"></i>Awareness</a></li>
+  <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i>Hackathon</a></li>
+  <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i>Progress</a></li>
+  <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i>Profile</a></li>
+  <li><a href="{{ url_for('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+</ul>
+</nav>
+  
+  <main>
     {% if 'user_id' in session %}
       <h2>Hackathon and Hands on Projects</h2>
       <p>add content here, program, and more.</p>
