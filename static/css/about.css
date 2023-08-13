@@ -3,14 +3,17 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #ffdddd;
-  min-height: 100%;
+  background-color: #ffdddd; 
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  display: flex;
+  flex-direction: column;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+ 
 }
 
 header {
@@ -64,22 +67,18 @@ nav a:hover {
 }
 
 main {
+  flex: 1; /* Grow and occupy remaining vertical space */
   padding: 20px;
 }
 
 footer {
-  display: block;
   background-color: #555;
   color: #fff;
   padding: 10px;
   text-align: center;
   width: 100%;
-  margin: 0;
   bottom: 0;
-  position: fixed;
-
 }
-
 
 /* Additional styles for the About Us page */
 #about {
