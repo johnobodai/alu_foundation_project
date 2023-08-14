@@ -26,8 +26,16 @@
   
   <main>
     {% if 'user_id' in session %}
-      <h2>Mentorship Program for You!</h2>
-      <p>Here you can view your progress, program, and more.</p>
+      <h2><b>Mentorship Program for You!</b></h2>      
+      <p><i>If you want a mentorship, you can book us here</i></p>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea><br>
+        <button type="submit">Submit</button>
+      </form>
+      
       <h4>Program1</h4>
       {% if current_user.courses %}
         <ul>
