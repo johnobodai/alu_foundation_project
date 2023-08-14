@@ -11,23 +11,28 @@
 
 <body>
   <header>
-    <h1>FAQ - Your Web Application</h1>
-    <p>Learn more about your web application</p>
-  </header>
+    	<h1>DigiGirls Technnovation</h1>
+	<nav>
+    	<ul>
+        	<li><a href="{{ url_for('index') }}">Home</a></li>
+        	<li><a href="{{ url_for('about') }}">About Us</a></li>
+        	<li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+        	<li><a href="{{ url_for('faq') }}">FAQ</a></li>
+        	{% if current_user.is_authenticated %}
+            	<li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        	{% else %}
+            	<li><a href="{{ url_for('login') }}">Login</a></li>
+            	<li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+        	{% endif %}
+    	</ul>
+	</nav>
+</header>
 
-  <nav>
-    <ul>
-      <li><a href="{{ url_for('index') }}">Home</a></li>
-      <li><a href="{{ url_for('about') }}">About Us</a></li>
-      <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
-      <li><a href="{{ url_for('faq') }}">FAQ</a></li>
-      <!-- Add other navigation links as needed -->
-    </ul>
-  </nav>
 
-  <main>
+  <main class="container">
     <h1>Frequently Asked Questions</h1>
 
+    <div class="faq-grid">
     <div class="faq-item">
       <h3>Question 1: What is your web application about?</h3>
       <p>Your answer to the first question goes here.</p>
@@ -44,11 +49,22 @@
     </div>
 
     <div class="faq-item">
-      <h3>How do I reset my password?</h3>
+      <h3>Question 4: How do I reset my password?</h3>
       <p>Instructions on how to reset your password can be found on the login page.</p>
     </div>
 
-    <!-- Add more questions and answers here -->
+    <div class="faq-item">
+      <h3>Question 5: Can I access the platform on my mobile</h3>
+      <p>answers here</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Question 6: </h3>
+      <p>answers here</p>
+    </div>
+
+
+   </div> 
   </main>
 
   <footer>

@@ -14,9 +14,6 @@
 <body>
     <header>
         <h1>DigiGirls Technnovation</h1>
-        <p>Learn coding from scratch</p>
-    </header>
-
     <nav>
         <ul>
             <li><a href="{{ url_for('index') }}">Home</a></li>
@@ -30,12 +27,12 @@
             {% endif %}
         </ul>
     </nav>
-
+    </header>
     <main>
         <section>
             <h2>Sign Up for Free</h2>
             <p>Create an account with DigiGirls Technnovation to improve your learning experiences.</p>
-            <form action="/register" method="POST">
+            <form action="/signup" method="POST">
                 <label for="title">Title:</label>
                 <select id="title" name="title">
                     <option value="Miss">Miss</option>
@@ -43,19 +40,39 @@
                     <option value="Mrs">Mrs</option>
                 </select><br>
 
-            <label for="gender">Gender:</label>
-            <input type="radio" id="female" name="gender" value="female" required>
-            <label for="female">Female</label>
-            <input type="radio" id="male" name="gender" value="male" required>
-            <label for="male">Male</label><br>
+				<label for="first_name">First Name:</label>
+				<input type="text" id="first_name" name="first_name" required><br>
 
-            <label for="country">Country:</label>
-            <select id="country" name="country" required>
-                <option value="Nigeria">Nigeria</option>
-                <option value="Ghana">Ghana</option>
-                <option value="Kenya">Kenya</option>
-                <!-- Add other African countries here -->
-            </select><br>
+				<label for="last_name">Last Name:</label>
+				<input type="text" id="last_name" name="last_name" required><br>
+
+				<label for="age">Age:</label>
+				<input type="number" id="age" name="age" min="13" required><br>
+            			<label for="gender">Gender:</label>
+            			<input type="radio" id="female" name="gender" value="female" required>
+            			<label for="female">Female</label>
+            			<input type="radio" id="male" name="gender" value="male" required>
+            			<label for="male">Male</label><br>
+
+			<label for="country">Select a Country:</label>
+			 <select id="country" name="country">
+			 <option value="">--Select Country--</option>
+			 </select>
+			 <script>
+			 // JavaScript array containing the names of 54 African countries
+			 const africanCountries = [ "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde", "Cameroon", "Central African Republic", "Chad", "Comoros", "Congo", "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "South Africa", "South Sudan", "Sudan", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe"];
+
+			// Get the <select> element
+			const selectElement = document.getElementById("country");
+
+			// Loop through the array and create <option> elements
+			 africanCountries.forEach((country) => { 
+			const optionElement = document.createElement("option");
+			optionElement.value = country;
+			optionElement.textContent = country;
+			selectElement.appendChild(optionElement);
+});
+			</script><br>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
@@ -67,9 +84,9 @@
             <input type="password" id="confirm_password" name="confirm_password" required><br>
 
             <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a
-                    href="privacy.html" target="_blank">Privacy Policy</a></label><br>
-
+            <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a></label><br>
+			
+	    <button type="submit">Register</button><br>
             <p>Already have an account? <a href="{{ url_for('login') }}">Login</a></p>
         </section>
     </main>

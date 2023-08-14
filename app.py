@@ -6,6 +6,7 @@ import pymysql
 import bcrypt
 import secrets
 from flask_login import LoginManager, UserMixin
+import pymysql.cursors
 
 
 # csrf = CSRFProtect(app)
@@ -54,6 +55,34 @@ def create_tables():
                                 FOREIGN KEY (email) REFERENCES users (email) ON DELETE CASCADE
                             )''')
 
+            # Create the courses table
+            cursor.execute('''CREATE TABLE IF NOT EXISTS courses (
+                                id INT AUTO_INCREMENT PRIMARY KEY,
+                                course_name VARCHAR(255) NOT NULL,
+                                instructor VARCHAR(255),
+                                description TEXT,
+                                start_date DATE,
+                                end_date DATE
+                            )''')
+
+            # Create the course_resources table
+            cursor.execute('''CREATE TABLE IF NOT EXISTS course_resources (
+                                id INT AUTO_INCREMENT PRIMARY KEY,
+                                course_id INT NOT NULL,
+                                resource_name VARCHAR(255) NOT NULL,
+                                resource_url VARCHAR(255) NOT NULL,
+                                FOREIGN KEY (course_id) REFERENCES courses (id) ON DELETE CASCADE
+                            )''')
+
+            # Create the enrollments table
+            cursor.execute('''CREATE TABLE IF NOT EXISTS enrollments (
+                                id INT AUTO_INCREMENT PRIMARY KEY,
+                                user_id INT NOT NULL,
+                                course_id INT NOT NULL,
+                                enrollment_date DATE NOT NULL,
+                                FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
+                                FOREIGN KEY (course_id) REFERENCES courses (id) ON DELETE CASCADE
+                            )''')
             conn.commit()
 
 
@@ -90,8 +119,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/register', methods=['GET', 'POST'])
-def register():
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
     if request.method == 'POST':
         # Process the registration form data when it's submitted
         title = request.form['title']
@@ -107,7 +136,7 @@ def register():
         hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
         # Insert the new user data into the 'users' table in the database
-        conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+        conn = pymysql.connect(host='localhost', user='j0hn', password='w14gs005.asdfghjkl', db='digigirls_db')
         cursor = conn.cursor()
         cursor.execute('''
             INSERT INTO users (title, first_name, last_name, age, gender, country, email, password)
@@ -120,7 +149,7 @@ def register():
         return redirect(url_for('login'))
 
     # Render the 'register.html' template for GET requests (displaying the registration form)
-    return render_template('register')
+    return render_template('signup.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -200,12 +229,20 @@ def courses():
     # Render the 'courses.html' template for the Courses page
     return render_template('courses.html')
 
+@app.route('/mentorship')
+def mentorship():
+    # Render the 'mentorship.html' template for the Mentorship Program page
+    return render_template('mentorship.html')
 
-@app.route('/course-details')
-def course_details():
-    # Render the 'course-details.html' template for the Course Details page
-    return render_template('course-details.html')
+@app.route('/awareness')
+def awareness():
+    # Render the 'awareness.html' template for the Outreach and Awareness Campaign
+    return render_template('awareness.html')
 
+@app.route('/hackathon')
+def hackathon():
+    # Render the 'mentorship.html' template for the Mentorship Program page
+    return render_template('hackathon.html')
 
 @app.route('/logout', methods=['POST'])
 def logout():
@@ -213,12 +250,6 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
-
-@app.route('/signup', methods=['GET', 'POST'])
-def signup():
-    if request.method == 'POST':
-        return redirect(url_for('dashboard'))
-    return render_template('signup.html')  # Replace 'signup.html' with the actual template for signup page
 
 
 @app.route('/profile')
@@ -398,63 +429,112 @@ def progress():
 
 @app.route('/enroll/<int:course_id>', methods=['GET', 'POST'])
 def enroll(course_id):
-    # Fetch course info from the database based on the provided course_id
     conn = get_db()
-    cursor = conn.cursor(pymysql.cursors.DictCursor)
-    cursor.execute('SELECT * FROM courses WHERE id = %s', (course_id,))
+    cursor = conn.cursor()
+
+    # Fetch course details from the database based on the provided course_id
+    course_info_query = """
+        SELECT id, course_name, course_description, course_duration, prerequisites
+        FROM courses
+        WHERE id = %s
+    """
+    cursor.execute(course_info_query, (course_id,))
     course_info = cursor.fetchone()
     conn.close()
 
-    if request.method == 'POST':
-        # Process the enrollment form data when it's submitted
-        # Here, you can add logic to enroll the user in the specified course (using the course_id)
-        # For now, we'll just redirect the user to the lesson details page.
-        return redirect(url_for('lesson', course_id=course_id))
+    if course_info is None:
+        # Course not found, you can handle this case as per your requirement (e.g., redirect to an error page)
+        return render_template('course_not_found.html')
 
-    # Render the 'enroll.html' template and pass the course_info to display course details
-    return render_template('enroll.html', course_info=course_info)
+    # Pass the course_info and course_id to the 'enroll.html' template
+    return render_template('enroll.html', course_info=course_info, course_id=course_id)
 
 
+def get_total_lessons(course_id):
+    # Your code to fetch the total number of lessons from the database or any other source
+    # For this example, I'll assume you have a function that fetches the total count
+    # of lessons from the database based on the provided course_id.
+    # Replace this with the actual implementation.
+    return 3  # Replace 10 with the actual total number of lessons
 
-    # Render the 'lesson_details.html' template and pass the lesson_details to display lesson details
-    return render_template('lesson.html', lesson_details=lesson)
 
+@app.route('/course/<int:course_id>', methods=['GET', 'POST'])
+def course_details(course_id):
+    conn = get_db()
+    cursor = conn.cursor()
 
-@app.route('/lesson/<int:course_id>')
-def lesson(course_id):
-    # Connect to the database and fetch lesson details for the specified course_id
-    conn = pymysql.connect(**db_config, autocommit=True)
-    cursor = conn.cursor(pymysql.cursors.DictCursor)
-    cursor.execute('SELECT * FROM courses WHERE id = %s', (course_id,))
+    # Fetch course details from the database based on the provided course_id
+    course_details_query = """
+        SELECT course_name, course_image_url, course_description, course_duration, prerequisites,
+               lesson_1_title, lesson_1_content, lesson_1_duration, lesson_1_instructor,
+               lesson_2_title, lesson_2_content, lesson_2_duration, lesson_2_instructor,
+               lesson_3_title, lesson_3_content, lesson_3_duration, lesson_3_instructor
+        FROM courses
+        WHERE id = %s
+    """
+    cursor.execute(course_details_query, (course_id,))
     course_details = cursor.fetchone()
     conn.close()
 
     if course_details is None:
         # Course not found, you can handle this case as per your requirement (e.g., redirect to an error page)
         return render_template('course_not_found.html')
-    
-    # Pass the course details to the 'lesson.html' template
-    return render_template('lesson.html', lesson_details=course_details)
+
+    # Print the course_details for debugging
+    print(course_details)
+
+    # Pass the course details to the 'course_details.html' template
+    return render_template('course_details.html', course_details=course_details, course_id=course_id)
 
 
-# ...
-
-# Route for individual lesson page
-@app.route('/lesson/<int:course_id>/lesson_<int:lesson_number>')
+@app.route('/individual_lesson/<int:course_id>/lesson_<int:lesson_number>')
 def individual_lesson(course_id, lesson_number):
-    # Connect to the database and fetch the specific lesson details
-    conn = pymysql.connect(**db_config, autocommit=True)
-    cursor = conn.cursor(pymysql.cursors.DictCursor)
-    cursor.execute('SELECT lesson_%s_title, lesson_%s_content, lesson_%s_duration, lesson_%s_instructor FROM courses WHERE id = %s', (lesson_number, lesson_number, lesson_number, lesson_number, course_id,))
+    conn = get_db()
+    cursor = conn.cursor()
+
+    # Construct the column names for the specified lesson_number
+    lesson_title_col = f"lesson_{lesson_number}_title"
+    lesson_content_col = f"lesson_{lesson_number}_content"
+    lesson_duration_col = f"lesson_{lesson_number}_duration"
+    lesson_instructor_col = f"lesson_{lesson_number}_instructor"
+
+    # Fetch lesson details from the courses table
+    lesson_details_query = f"""
+        SELECT {lesson_title_col}, {lesson_content_col}, {lesson_duration_col}, {lesson_instructor_col}, course_name
+        FROM courses
+        WHERE id = %s
+    """
+    cursor.execute(lesson_details_query, (course_id,))
     lesson_details = cursor.fetchone()
-    conn.close()
 
-    if lesson_details is None or all(value is None for value in lesson_details.values()):
-        # Lesson not found or lesson details are not available, you can handle this case as per your requirement (e.g., redirect to an error page)
-        return render_template('lesson_not_found.html')
+    if lesson_details is None:
+        # Handle the case where the lesson is not found
+        # You may want to redirect to an error page or display an error message
+        pass
 
-    # Pass the lesson details to the 'individual_lesson.html' template
-    return render_template('individual_lesson.html', lesson_details=lesson_details)
+    # Extract the column values from the fetched row
+    lesson_title, lesson_content, lesson_duration, lesson_instructor, course_name = lesson_details
+
+    # Create a dictionary for lesson details
+    lesson_details_dict = {
+        'title': lesson_title,
+        'content': lesson_content,
+        'duration': lesson_duration,
+        'instructor': lesson_instructor,
+        'course_name': course_name
+    }
+
+    # Fetch associated resources for the lesson
+    resources_query = """
+        SELECT resource_name, resource_url
+        FROM course_resources
+        WHERE course_id = %s
+    """
+    cursor.execute(resources_query, (course_id,))
+    resources = cursor.fetchall()
+
+    return render_template('individual_lesson.html', lesson_details=lesson_details_dict, resources=resources, course_details=course_details)
+
 
 
 if __name__ == "__main__":

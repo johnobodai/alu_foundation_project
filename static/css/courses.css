@@ -10,13 +10,16 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Make sure the body takes at least the full viewport height */
+  min-height: 100vh;
+  background-image: radial-gradient(circle, #ffdddd, #6b5f5f); /* gradient background */
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  justify-content: center;
 }
 
 /* Navigation bar styles */
 nav {
-  background-color: #333;
-  width: 60px;
+  background-color: #555;
+  width: 80px;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -35,76 +38,86 @@ nav {
   margin-top: auto;
 }
 
-.nav-list li {
-  margin-bottom: 20px;
-}
-
 .nav-list a {
   color: #fff;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 50px;
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
-.nav-list a:hover {
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list li:hover {
   background-color: #777;
 }
-
-/* Main content styles */
-main {
-  flex: 1; /* Let the main content take all the available vertical space */
-  margin-left: 80px;
-  padding: 20px;
-  /* Add some space between the main content and footer */
-  margin-bottom: 70px;
-  display: flex;
-  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
-  justify-content: space-between;
-}
-
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  position: fixed; /* Keep the footer fixed at the bottom of the screen */
-  width: 100%;
-  bottom: 0;
-}
-
-/* Course category styles */
-#course-categories {
-  display: flex;
-  flex-wrap: wrap; /* Allow course categories to wrap into multiple columns */
-  justify-content: space-between;
-}
-
-#course-categories .category {
-  flex-basis: calc(33.33% - 20px); /* Each category takes equal space in a column */
-  margin-bottom: 30px;
+/* Display titles when screen width is greater than or equal to 600px */
+@media (min-width: 600px) {
+  .nav-list li a {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#course-categories h3 {
-  font-size: 20px;
+
+/* Main content styles */
+main {
+  flex: 1;
+  margin-left: 110px;
+  padding: 20px;
+  margin-bottom: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Footer styles */
+footer {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Course category styles */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.category {
+  width: 40%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.category h3 {
+  font-size: 24px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 /* Course card styles */
 .course-card {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 100%; /* Make sure each course card takes full width */
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .course-card img {
@@ -113,37 +126,54 @@ footer {
   margin-bottom: 10px;
 }
 
-.course-card h4 {
+.content {
+  text-align: center;
+}
+
+.content h4 {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-.course-card p {
+.content p {
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.course-card ul {
+.content ul {
   font-size: 14px;
   margin-bottom: 10px;
 }
 
-.course-card li {
+.content li {
   margin-bottom: 5px;
 }
 
-.course-card button {
-  background-color: #007bff;
-  color: #fff;
+.btn {
+  background-color: #ffdddd;
+  color: #333;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: auto;
 }
 
-.course-card button:hover {
-  background-color: #0056b3;
+.btn a {
+  text-decoration: none;
+  color: #333;
+}
+
+.btn:hover {
+  background-color: #777;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .category {
+    width: 100%;
+  }
 }
 

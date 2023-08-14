@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/courses.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>HTML Course - Lesson 2</title>
+  <style>
+    /* Insert CSS styling here */
+  </style>
+</head>
+<body>
+  <div class="course-card">
+    <img src="../static/images/HTML1_Basic.jpg" alt="Course Image"> <br>
+  <h1>HTML Course - Lesson 2: HTML Basics</h1>
+  <h2>HTML Basics Examples</h2>
+  <p>In this chapter we will show some basic HTML examples.</p>
+  <p>Don't worry if we use tags you have not learned about yet as you will get to learn them in subsequent lessons.</p>
+
+  <section class="content">
+    
+    <h3>HTML Documents</h3>
+    
+    <p>An HTML document consists of elements that define the structure and content of a web page. Elements are enclosed in tags, and they provide meaning to the content they enclose.</p>
+    <p>All HTML documents must start with a document type declaration: &lt;!DOCTYPE html&gt;.</p>   
+    <p>The basic structure of an HTML document includes the opening &lt;html&gt; tag and the closing &lt;/html&gt; tag that contains the entire content of the page.</p>
+    <p>The visible part of the HTML document is between &lt;body&gt; and &lt;/body&gt;</p>
+    
+    
+    <h3>The &lt;!DOCTYPE&gt; Declaration</h3>
+
+    <p>The &lt;!DOCTYPE&gt; declaration specifies the HTML version being used. It helps browsers understand the document's structure and rendering. For HTML5, the &lt;!DOCTYPE&gt; declaration is simplified to &lt;!DOCTYPE html&gt;.</p>
+    <p>It must only appear once, at the top of the page (before any HTML tags).</p>
+    <p>The &lt;!DOCTYPE&gt; declaration is not case sensitive.</p>
+
+
+    <h3>HTML Headings</h3>
+    <p>HTML provides six levels of headings, from &lt;h1&gt; to &lt;h6&gt;, which represent varying levels of importance. Headings help structure the content and provide visual hierarchy on the page.</p>
+    <p>&lt;h1&gt; defines the most important heading. &lt;h6&gt; defines the least important heading. </p>
+    
+
+    <h3>Paragraphs</h3>
+    <p>The &lt;p&gt; tag is used to define paragraphs in HTML. Paragraphs group related text together and provide better readability.</p>
+    
+    
+    <h3>Links</h3>
+    <p>Links, also known as hyperlinks, are used to navigate between different web pages. The &lt;a&gt; tag is used to create links, and the <code>href</code> attribute specifies the URL of the target page.</p>
+    
+    
+    <h3>Images</h3>
+    <p>The &lt;img&gt; tag is used to display images on a web page. The <code>src</code> attribute specifies the image source, and the <code>alt</code> attribute provides alternative text for accessibility.</p>
+  </section>
+  
+
+  <section class="output">
+    <h2>Output</h2>
+    <div class="output-area">
+      <!-- Display rendered HTML output of practical questions here -->
+    </div>
+  </section>
+  
+  <script>
+    // Add JavaScript functionality for practical question submission and output display
+    const submitButton = document.querySelector('.submit-practical');
+    submitButton.addEventListener('click', () => {
+      // Display a pop-up screen for participants to enter practical answers
+      const practicalAnswers = prompt('Enter your practical answers here:');
+      // Display the answers in the output area
+      const outputArea = document.querySelector('.output-area');
+      outputArea.innerHTML = `<p>Your practical answers:<br>${practicalAnswers}</p>`;
+    });
+  </script>
+</body>
+</html>

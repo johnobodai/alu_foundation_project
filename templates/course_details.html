@@ -1,24 +1,40 @@
-<!-- templates/course_details.html -->
+<!DOCTYPE html>
+<html lang="en">
 
-{% extends 'base.html' %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enrolled Courses - Your Web Application</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-{% block content %}
-    <h2>{{ course.title }}</h2>
-    <p>{{ course.description }}</p>
-    <h3>Lessons:</h3>
+<body>
+    <nav>
+<ul class="nav-list">
+  <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+  <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i>Courses</a></li>
+  <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-handshake-angle"></i>Mentorship</a></li>
+  <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i>Hackathon</a></li>
+  <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i>Progress</a></li>
+  <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i>Profile</a></li>
+  <li><a href="{{ url_for('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+</ul>
+</nav>
+
+    <main>
+    <h1>{{ course_details[0] }}</h1>
+    <img src="../images/html&css.png" alt="{{ course_details[0] }} Image">
+    <p>{{ course_details[2] }}</p>
+    <p>Duration: {{ course_details[3] }}</p>
+    <p>Prerequisites: {{ course_details[4] }}</p>
+
     <ul>
-        {% for lesson in course.lessons %}
-            <li>
-                {% if current_user.is_authenticated %}
-                    {% if lesson in current_user.completed_lessons %}
-                        <span style="color: green;">✔</span> 
-                    {% else %}
-                        <span style="color: red;">✖</span> 
-                    {% endif %}
-                {% endif %}
-                {{ lesson.title }}
-            </li>
-        {% endfor %}
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=1) }}">Lesson 1: {{ course_details[5] }}</a></li>
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=2) }}">Lesson 2: {{ course_details[9] }}</a></li>
+        <li><a href="{{ url_for('individual_lesson', course_id=course_id, lesson_number=3) }}">Lesson 3: {{ course_details[13] }}</a></li>
     </ul>
-{% endblock %}
+    </main>
+</body>
+</html>
 

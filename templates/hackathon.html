@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentorship Program</title>
+  <!-- Link to your custom CSS file for the Dashboard page -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/hackathon.css') }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script src="{{ url_for('static', filename='js/logout.js') }}"></script>
+
+</head>
+
+<body>
+  <nav>
+<ul class="nav-list">
+  <li><a href="{{ url_for('dashboard') }}" title="Dashboard"><i class="fas fa-home"></i>Dashboard</a></li>
+  <li><a href="{{ url_for('courses') }}" title="Courses"><i class="fas fa-book"></i>Courses</a></li>
+  <li><a href="{{ url_for('mentorship')}}" title="Mentorship Program"><i class="fas fa-handshake-angle"></i>Mentorship</a></li>
+  <li><a href="{{ url_for('hackathon')}}" title="Hackathon Competitions"><i class="fas fa-code"></i>Hackathon</a></li>
+  <li><a href="{{ url_for('progress') }}" title="Progress"><i class="fas fa-chart-line"></i>Progress</a></li>
+  <li><a href="{{ url_for('profile') }}" title="Profile"><i class="fas fa-user"></i>Profile</a></li>
+  <li><a href="{{ url_for('index') }}" onclick="logout()" title="Logout"><i class="fas fa-sign-out-alt"></i></a></li>
+</ul>
+</nav>
+  
+  <main>
+    {% if 'user_id' in session %}
+      <h2>Hackathon and Hands on Projects</h2>
+      <p>Hope you are enjoying the lessons so far.</p>
+      <p>Watch out for updates about the hackaton competition where you get to put your skills into practice.</p>
+      <h4>Projects are loading .........</h4>
+      {% if current_user.courses %}
+        <ul>
+          {% for course in current_user.courses %}
+            <li>{{ course.name }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>No program enrolled yet.</p>
+      {% endif %}
+      <h4></h4>
+      <p>{{ current_user.progress }}% completed</p>
+
+      <!-- Add other personalized dashboard content here -->
+
+    {% else %}
+      <p>You need to <a href="{{ url_for('login') }}">log in</a> or <a href="{{ url_for('signup') }}">sign up</a> to access your dashboard.</p>
+    {% endif %}
+  </main>
+</body>
+
+<footer>
+    <p>&copy; 2023 DigiGirls Technnovation</p>
+</footer>
+
+
+</html>

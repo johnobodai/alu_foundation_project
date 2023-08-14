@@ -12,15 +12,17 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-image: radial-gradient(circle, #ffdddd, #6b5f5f); /* gradient background */
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  display: flex;
 }
 
 /* Navigation bar styles */
 nav {
-  background-color: #333;
-  width: 60px; /* Adjust the width as needed */
-  height: 100vh; /* Take the full height of the viewport */
-  position: fixed; /* Fixed position to keep the navigation always visible */
+  background-color: #555;
+  width: 80px;
+  height: 100vh;
+  position: fixed;
   top: 0;
   left: 0;
   display: flex;
@@ -37,23 +39,31 @@ nav {
   margin-top: auto;
 }
 
-.nav-list li {
-  margin-bottom: 20px;
-}
-
 .nav-list a {
   color: #fff;
+  font-size: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 50px;
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 
-.nav-list a:hover {
-  background-color: #777; /* Slightly lighter gray on hover */
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list li:hover {
+  background-color: #777;
+}
+/* Display titles when screen width is greater than or equal to 600px */
+@media (min-width: 600px) {
+  .nav-list li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Main content styles */
@@ -64,7 +74,7 @@ main {
 
 /* Footer styles */
 footer {
-  background-color: #333;
+  background-color: #555;
   color: #fff;
   padding: 10px;
   text-align: center;
@@ -116,7 +126,7 @@ main form {
 }
 
 main button {
-  background-color: #ccc; /* Change to the desired color for the Back to Dashboard button */
+  background-color: #555; /* Change to the desired color for the Back to Dashboard button */
   color: #fff;
   border: none;
   padding: 8px 16px;
