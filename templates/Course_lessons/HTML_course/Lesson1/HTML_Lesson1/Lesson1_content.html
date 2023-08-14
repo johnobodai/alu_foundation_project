@@ -77,5 +77,24 @@
   <!-- Add an image to how the HTML page looks on the broswer -->
   
   
+  <section class="output">
+    <h2>Output</h2>
+    <div class="output-area">
+      <!-- Display rendered HTML output of practical questions here -->
+    </div>
+  </section>
+  
+  <script>
+    // Add JavaScript functionality for practical question submission and output display
+    const submitButton = document.querySelector('.submit-practical');
+    submitButton.addEventListener('click', () => {
+      // Display a pop-up screen for participants to enter practical answers
+      const practicalAnswers = prompt('Enter your practical answers here:');
+      // Display the answers in the output area
+      const outputArea = document.querySelector('.output-area');
+      outputArea.innerHTML = `<p>Your practical answers:<br>${practicalAnswers}</p>`;
+    });
+  </script>
+  
 </body>
 </html>
