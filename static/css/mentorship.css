@@ -123,4 +123,28 @@ main li {
   font-size: 14px;
   margin-bottom: 5px;
 }
-
+input{
+   height: 10px;
+   border:none;
+   border-bottom: 2px solid wheat;
+   outline: none;
+   height: 40px;
+   background-color: gray;
+}
+textarea {
+  height: 10px;
+  border:none;
+  border-bottom: 2px solid wheat;
+  outline: none;
+  height: 40px;
+  background-color: gray;
+}
+button{
+  background-color:black;
+  height: 50px;
+  width: 90px;
+  border: 2px solid wheat;
+  margin-left: 90px;
+  color: whitesmoke;
+  outline: none;
+}
