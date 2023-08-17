@@ -289,13 +289,10 @@ def edit_profile():
             country = request.form['country']
 
             # Update the user's profile in the database
-            conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+            conn = pymysql.connect(host='localhost', user='j0hn', password='w14gs005.asdfghjkl', db='digigirls_db')
             cursor = conn.cursor()
-            cursor.execute('''
-                UPDATE users
-                SET title = %s, first_name = %s, last_name = %s, age = %s, gender = %s, country = %s
-                WHERE id = %s
-            ''', (title, first_name, last_name, age, gender, country, user_id))
+            cursor.execute("UPDATE users SET title = %s, first_name = %s, last_name = %s, age = %s, gender = %s, country = %s WHERE id = %s",
+               (title, first_name, last_name, age, gender, country, user_id))
             conn.commit()
             conn.close()
 
@@ -304,7 +301,7 @@ def edit_profile():
 
         else:
             # Fetch the user's details from the database for displaying the current profile
-            conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+            conn = pymysql.connect(host='localhost', user='j0hn', password='w14gs005.asdfghjkl', db='digigirls_db')
             cursor = conn.cursor(pymysql.cursors.DictCursor)
             cursor.execute('SELECT * FROM users WHERE id = %s', (user_id,))
             user = cursor.fetchone()
@@ -320,7 +317,7 @@ def edit_profile():
 
 def save_reset_token(email, token):
     # Save the password reset token in the database
-    conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+    conn = pymysql.connect(host='localhost', user='j0hn', password='w14gs005.asdfghjkl', db='digigirls_db')
     cursor = conn.cursor()
     cursor.execute('INSERT INTO password_reset_tokens (email, token) VALUES (%s, %s)', (email, token))
     conn.commit()
@@ -328,7 +325,7 @@ def save_reset_token(email, token):
 
 def get_reset_token(email):
     # Fetch the password reset token from the database based on the email
-    conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db=DB_NAME)
+    conn = pymysql.connect(host=DB_HOST, user=DB_USER, password=DB_PASSWORD, db='digigirls_db')
     cursor = conn.cursor()
     cursor.execute('SELECT token, timestamp FROM password_reset_tokens WHERE email = %s', (email,))
     token_data = cursor.fetchone()

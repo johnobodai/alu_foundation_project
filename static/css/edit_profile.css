@@ -1,0 +1,195 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+    background-image: radial-gradient(circle, #ffdddd, #6b5f5f); /* gradient background */
+  min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the content fills at least the viewport height */
+}
+
+header {
+   display: flex;
+   background-color: #333;
+   color: #fff;
+   padding: 10px 20px;
+   text-align: left;
+   opacity: 0.8;
+  }
+
+  header h1 {
+    font-size: 35px;
+   margin: 0;
+   flex:1;
+ }
+
+/* Navigation bar styles */
+nav {
+  background-color: #555;
+  width: 80px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 20px;
+  margin-top: auto;
+}
+
+.nav-list a {
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 50px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.nav-list li {
+  margin-bottom: 20px;
+}
+
+.nav-list li:hover {
+  background-color: #777;
+}
+/* Display titles when screen width is greater than or equal to 600px */
+@media (min-width: 600px) {
+  .nav-list li a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-title {
+  display: block;
+}
+}
+
+/* Logout link styles */
+.logout-link {
+  margin-top: auto; /* Push the logout link to the bottom of the navigation column */
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden by moving it off-screen */
+  height: 100vh;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+}
+
+#sidebar.active {
+  left: 0; /* Show the sidebar by moving it into the viewport */
+}
+
+
+main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="radio"] {
+  margin-right: 5px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--grey-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #777;
+}
+
+form p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  margin-top: auto;
+  opacity: 0.8;
+}
+
+
+
