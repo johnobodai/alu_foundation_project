@@ -123,31 +123,33 @@ main li {
   font-size: 14px;
   margin-bottom: 5px;
 }
-
+/*input{
+   height: 10px;
+   border:none;
+   border-bottom: 2px solid wheat;
+   outline: none;
+   height: 40px;
+   background-color: gray;
+}
+textarea {
+  height: 10px;
+  border:none;
+  border-bottom: 2px solid wheat;
+  outline: none;
+  height: 40px;
+  background-color: gray;
+}
+button{
+  background-color:black;
+  height: 50px;
+  width: 90px;
+  border: 2px solid wheat;
+  margin-left: 90px;
+  color: whitesmoke;
+  outline: none;
+}*/
 /* Google Fonts -Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-
-#right {
-  position: relative;
-  float: right;
-  width: 500px;
-  height: 250px;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-bottom:200px;
-  
-}
-.over {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 50%;
-  width: 100%;
-  background-color: #4070F4;
-  border-radius: 25px 25px 0 25px;
-
-}
 
 *{
   margin: 0;
@@ -158,14 +160,14 @@ main li {
 .slide-container{
   max-width: 1120px;
   width: 100%;
+  background-color:grey ;
   padding: 40px 0;
-  }
+}
 .slide-content{
   margin: 0 40px;
-  overflow: hidden;
-  border-radius: 25px;
 }
 .card{
+  width: 320px;
   border-radius: 25px;
   background-color: #FFF;
 }
@@ -175,8 +177,8 @@ main li {
   flex-direction: column;
   align-items: center;
   padding: 10px 14px;
-}
 
+}
 .image-content{
   position: relative;
   row-gap: 5px;
@@ -190,9 +192,8 @@ main li {
   width: 100%;
   background-color: #4070F4;
   border-radius: 25px 25px 0 25px;
+
 }
-
-
 .overlay::before
 .overlay::after{
   content:'';
@@ -247,37 +248,5 @@ transition: all 0.3s ease;
 .button:hover{
   background:#265DF2;
 
-}
-.swiper-navBtn{
-  color: #6E93f7;
-  transition: color 0.3s ease;
-}
-.swiper-navBtn:hover{
-  color: #4070F4;
-}
-.swiper-navBtn::before,
-.swiper-navBtn::after{
-  font-size: 35px;
-}
-.swiper-button-next{
-  right: 0;
-}
-.swiper-button-prev{
-  left: 0;
-}
-.swiper-pagination-bullet{
-  background-color: #6E93f7;
-  opacity: 1;
-}
-.swiper-pagination-bullet-active{
-  background-color: #4070F4;
-}
 
-@media screen and (max-width: 768px) {
-  .slide-content{
-    margin: 0 10px;
-  }
-  .swiper-navBtn{
-    display: none;
-  }
 }
